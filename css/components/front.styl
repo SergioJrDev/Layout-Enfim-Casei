@@ -1,0 +1,105 @@
+.intro {
+	bg-image(cover, center, '../../img/garden.jpg');
+	height: 500px;
+	.title-section {
+		color: #fff;
+		max-width: 350px;
+	}
+	p {
+		color: #fff;
+		max-width: 500px; 
+	}
+}
+
+
+.box {
+	background: whitesmoke;
+	&-item {
+		margin-bottom: 35px;
+	}
+	.title-section {
+		margin-bottom: 30px;
+	}
+	&-icon {
+		display: inline-block;
+	    width: 30px;
+	    height: 30px;
+	    text-align: center;
+	    color: #3096d2;
+	    line-height: 30px;
+	    border-radius: 50%;
+	    font-size: 1.5rem;
+	    margin-right: 10px;
+	}
+	&-title {
+		display: inline-block;
+	    color: #3c3c3c;
+	    font-size: 1.5rem;
+	    font-weight: 600;
+
+	}
+	&-content {
+		padding-left: 40px;
+	}
+}
+
+/*.box div:nth-child(3n+3) .box-icon {
+	background: #30d280;
+}
+
+.box div:nth-child(3n+2) .box-icon {
+	background: #30d280;
+}
+*/
+
+.descr {
+	/*height: 600px;*/
+	&-item {
+		margin-bottom: 40px;
+	}
+	&-img {
+		position: relative;
+		img {
+			/*position: absolute;*/
+			top: 0;
+			left: 0;
+			&:nth-child(2) {
+				top: 20px;
+				left: 180px;
+			}
+			&:nth-child(3) {
+				top: 70px;
+				left: 80px;
+			}
+		}
+	}
+	p {
+   	 	/*font-size: 1.3rem;*/
+    	color: #333;
+    	max-width: 380px;
+	}
+	.icons {
+	    display: flex;
+	    justify-content: space-around;
+	    align-items: center;
+	    height: 100%;
+	    max-width: 380px;
+	    i {
+	    	color: #656565;
+	    	font-size: 4rem;
+	    }
+	}
+}
+
+.try {
+	bg-image(cover, top, '../../img/try.jpg');
+	h2 {
+		color: #fff;
+	}
+	p {
+		font-size: 1.3rem;
+		max-width: 700px;
+		color: #fff;
+		margin: 0 auto 40px auto;
+	}
+}

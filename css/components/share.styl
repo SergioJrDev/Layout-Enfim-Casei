@@ -1,0 +1,121 @@
+/*<div class="share">
+    <div class="holder">
+        <p>Compartilhar</p>
+        <div class="share-list share-whatsapp"><a class="share-link" target="_blank" href="whatsapp://send?text=Olá! Encontrei a matéria <?php the_title(); ?> e gostaria de compartilhar com vc ;) <?php echo get_permalink(); ?>" data-action="share/whatsapp/share">Whatsapp</a></div>
+        <div class="share-list share-facebook"><a class="share-link" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=####LINK">Facebook</a></div>
+        <div class="share-list share-twitter"><a class="share-link" target="_blank" href="http://twitter.com/share?text=<?php the_title(); ?>&url=<?php echo get_permalink(); ?>&hashtags=DII,DoencaDeCrohn,DiarioDeUmCrohnista">Twitter</a></div>
+    </div>
+</div>*/
+
+.single-z {
+    z-index: 99;
+    position: relative;
+}
+
+.p-white {
+    .share {
+        .holder {
+            p {
+                color: #333 !important;
+            }
+        }
+    }
+}
+
+.share {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(to bottom, #fdfdfd, white);
+    box-shadow: 0px 0px 3px #d0d0d0;
+    padding: 10px 15px;
+    .holder {
+        display: flex;
+        justify-content: space-between;
+        p {
+        	color: #333;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    }
+
+    &-list {
+    	display: inline-block;
+    }
+	&-whatsapp {
+		a {
+			&:after {
+			content: "\f232";
+			}
+		}
+	}
+	&-facebook {
+		a {
+			&:after {
+			content: "\f082";
+			}
+		}
+
+	}
+	&-twitter {
+		a {
+			&:after {
+			content: "\f099";
+			}
+		}
+
+	}
+	&:nth-child(4) {
+		a {
+			&:after {
+			content: "\f003";
+			}
+		}
+    }
+    &-link {
+    	font-size: 0;
+		&:after {
+		    font-family: FontAwesome;
+		    font-style: normal;
+		    font-weight: normal;
+		    text-decoration: inherit;
+		    color: #333;
+		    font-size: 24px;
+		}
+    }
+}
+
+@media screen and (min-width: sm) {
+    .p-white {
+        .share .holder .share-link:after {
+            color: #333;
+        }
+    }
+	.share {
+		position: relative;
+		background: none;
+		box-shadow: none;
+		padding: 0;
+	    align-items: center;
+	    margin-bottom: 20px;
+	    &-whatsapp {
+	    	display: none;
+	    }
+        .holder {
+            display: block;
+            p {
+                color: #ccc;
+                margin-right: 10px;
+                display: none;
+                display: inline-block;
+            }
+            .share-link {
+                margin-right: 10px;
+                &:after {
+                    color: #ccc;
+                }
+            }
+        }
+	}
+}

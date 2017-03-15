@@ -1,0 +1,38 @@
+Apresentação
+	Sua nova forma de ter um site de casamento
+
+Features
+	Galeria de fotos
+	Lista de convidados
+	Blog
+	Confirmação de presença  
+	Responsivo
+	Domínio Próprio
+	Lista de presentes
+	História do casal
+	Página de recados
+	Local da cerimônia/festa 
+	Contribuir para lua de mel
+
+Componentes
+	Cabeçalhos
+	Timeline
+	Lista de Convidados
+	Recados
+	Blog
+	Lista de Presentes
+
+Depoimentos
+	Frases de clientes
+
+Planos
+	Básico
+	Intermediário
+	Avançado
+
+Como funciona
+	Você escolhe um plano, os compontenes do seu site e em 48h ele estará no ar
+
+Crie um modelo gratuitamente
+	Experimente gratuitamente
+
