@@ -9,11 +9,10 @@ function checkEl() {
 	}
 	let scrollW = window.outerHeight,
 		toTop = window.pageYOffset,
-		toBottom = toTop + (scrollW - fix),
+		toBottom = scrollW - fix,
 		el = document.querySelectorAll('.animate');
-
 	el.forEach(function(e) {
-		if(e.offsetTop <= toBottom) {
+		if(e.getBoundingClientRect().top <= toBottom) {
 			e.classList.add('active');
 		} else {
 			e.classList.remove('active');
