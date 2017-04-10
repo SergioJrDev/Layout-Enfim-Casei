@@ -1,12 +1,12 @@
 function checkEl() {
 	let fix = 0;
-	if(window.outerWidth < 480) {
-		fix = 100;
-	} else if(window.outerWidth < 1024) {
-		fix = 150;
-	} else {
-		fix = 200;
-	}
+	// if(window.outerWidth < 480) {
+	// 	fix = 0;
+	// } else if(window.outerWidth < 1024) {
+	// 	fix = 0;
+	// } else {
+	// 	fix = 200;
+	// }
 	let scrollW = window.outerHeight,
 		toTop = window.pageYOffset,
 		toBottom = scrollW - fix,
