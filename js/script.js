@@ -34,6 +34,11 @@ $(document).ready(function(){
  			$('.number-seconds').text(seconds);
 
  	}, 1000);
+
+ 	$(".owl-carousel").owlCarousel({
+	    autoHeight: true,
+	    items:1
+ 	});
 });
 
 // function closeModal(e) {

@@ -1,0 +1,49 @@
+.local {
+	/*bg-image(cover, bottom, '../../img/local.jpg');*/
+	&-item {
+		padding: 20px;
+	}
+	h2 {
+		font-weight: lighter;
+		margin-bottom: 20px;
+		&.pink-color {
+			color: pink_color;
+		}
+	}
+	&-item {
+		h2 {
+			font-size: 38px;
+			color: #333;
+			font-weight: bold;
+		}
+	}
+	.local-details {
+		margin-bottom: 10px;
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.max_width {
+		max-width: 300px;
+		margin: auto; 
+	}
+	&.title-middle {
+		bg-image(cover, bottom, '../../img/hug.jpg');
+		h2,
+		p {
+			color: #fff;
+		}
+		.title-event {
+			font-weight: lighter;
+		}
+		.bordered {
+			border-radius: 3px;
+			border-width: 2px;
+		}
+	}
+}
+
+.bordered {
+	border: 1px solid #dadada;
+}
