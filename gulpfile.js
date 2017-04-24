@@ -16,6 +16,7 @@ gulp.task('stylus', function () {
 
 gulp.task('watch', function() {
 	gulp.watch('css/components/*.styl', ['stylus']);
+    gulp.watch('plugins/Components/*.styl', ['stylus']);
     gulp.watch('css/shared/*.styl', ['stylus']);
 });
 

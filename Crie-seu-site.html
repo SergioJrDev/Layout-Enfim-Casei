@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" ng-app="App">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
@@ -11,11 +11,14 @@
 		<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel/assets/owl.carousel.min.css">
 		<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel/assets/owl.theme.default.min.css">
 
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-ctrl.js"></script>
+
 		<meta name="theme-color" content="#008c9e">
 		<meta name="msapplication-navbutton-color" content="#008c9e">
 		<meta name="apple-mobile-web-app-status-bar-style" content="#008c9e">
 	</head>
-	<body>
+	<body ng-controller="appCtrl">
 		<header class="default gradient">
  			<div class="container">
  				<h1 class="logo font-poppins">Enfim, casei!</h1>
@@ -42,10 +45,149 @@
  			<div class="container">
 				<h2 class=" title-descr tab-bottom font-poppins">Monte seu site</h2>
 				<p>Selecione o que você gostaria de ter no seu site.</p>
+				<form class="form">
+					<div class="input-group">
+						<label class="label">Digite o nome da noiva</label>
+						<input type="text" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="">
+					</div>
+					<div class="input-group">
+						<label class="label">Digite o nome do noivo</label>
+						<input type="text" ng-model="names.noivo" ng-change="changeName(names)" class="input" name="">
+					</div>
+				</form>
 
-				<h3 class="components-title">Casal</h3>
+				<div class="owl-carousel components">
+					<section class="main auto-h apresentation overlay">
+						<header class="default transparent">
+				 			<div class="container">
+				 				<h1 class="logo"></h1>
+				 				<div class="nav">
+				 					<button class="hamburger hamburger--collapse" type="button">
+				 					  <span class="hamburger-box">
+				 					    <span class="hamburger-inner"></span>
+				 					  </span>
+				 					</button>
+				 					<div class="clearfix"></div>
+				 					<nav class="nav-content">
+				 						<ul class="nav-list">
+				 							<li><a href="#">Início</a></li>
+				 							<li><a href="#">Local</a></li>
+				 							<li><a href="#">RSVP</a></li>
+				 							<li><a href="#">Contato</a></li>
+				 						</ul>
+				 					</nav>
+				 				</div>
+				 			</div>
+				 		</header>
+						<div class="container">
+							<div class="descr">
+								<h2 class="font-petit a-center lines names">{{noiva}} <span class="break font-petit">&</span> {{noivo}}</h2>
+								<h3 class="font-petit date a-center">10 de Dezembro de 2018, São Paulo</h3>
+							</div>
+							<div class="down a-center">
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+						</div>
+					</section>
+
+					<section class="main auto-h apresentation overlay bg-number-2">
+						<header class="default transparent centered bottom">
+				 			<div class="container">
+				 				<h1 class="logo"></h1>
+				 				<div class="nav">
+				 					<button class="hamburger hamburger--collapse" type="button">
+				 					  <span class="hamburger-box">
+				 					    <span class="hamburger-inner"></span>
+				 					  </span>
+				 					</button>
+				 					<div class="clearfix"></div>
+				 					<nav class="nav-content">
+				 						<ul class="nav-list">
+				 							<li><a href="#">Início</a></li>
+				 							<li><a href="#">Local</a></li>
+				 							<li><a href="#">RSVP</a></li>
+				 							<li><a href="#">Contato</a></li>
+				 						</ul>
+				 					</nav>
+				 				</div>
+				 			</div>
+				 		</header>
+						<div class="container">
+							<div class="descr">
+								<p class="style_font top-title a-center">Bem vindo a celebração do casamento de...</p>
+								<h2 class="names a-center">{{noiva}} <i class="break fa fa-heart-o" aria-hidden="true"></i> {{noivo}}</h2>
+							</div>
+						</div>
+					</section>
+
+					<section class="main auto-h apresentation overlay bg-number-3">
+						<header class="default transparent">
+				 			<div class="container">
+				 				<h1 class="logo"></h1>
+				 				<div class="nav">
+				 					<button class="hamburger hamburger--collapse" type="button">
+				 					  <span class="hamburger-box">
+				 					    <span class="hamburger-inner"></span>
+				 					  </span>
+				 					</button>
+				 					<div class="clearfix"></div>
+				 					<nav class="nav-content">
+				 						<ul class="nav-list">
+				 							<li><a href="#">Início</a></li>
+				 							<li><a href="#">Local</a></li>
+				 							<li><a href="#">RSVP</a></li>
+				 							<li><a href="#">Contato</a></li>
+				 						</ul>
+				 					</nav>
+				 				</div>
+				 			</div>
+				 		</header>
+						<div class="container">
+							<div class="descr">
+								<p class="a-center names style_font">{{noiva}}</p>
+								<p class="a-center names style_font">&</p>
+								<p class="a-center names style_font">{{noivo}}</p>
+							</div>
+							<div class="down a-center">
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="main auto-h apresentation overlay bg-number-4">
+						<header class="default transparent vertical">
+				 			<div class="container">
+				 				<div class="nav">
+				 					<button class="hamburger hamburger--collapse" type="button">
+				 					  <span class="hamburger-box">
+				 					    <span class="hamburger-inner"></span>
+				 					  </span>
+				 					</button>
+				 					<div class="clearfix"></div>
+				 					<nav class="nav-content">
+				 						<ul class="nav-list">
+				 							<li class="a-right"><a href="#">Início</a></li>
+				 							<li class="a-right"><a href="#">Local</a></li>
+				 							<li class="a-right"><a href="#">RSVP</a></li>
+				 							<li class="a-right"><a href="#">Contato</a></li>
+				 						</ul>
+				 					</nav>
+				 				</div>
+				 			</div>
+				 		</header>
+						<div class="container">
+							<div class="descr">
+								<h2 class="names rotate a-left style_font">Bem Vindo</br> ao nosso</br>casamento...</h2>
+							</div>
+							<div class="down a-center no-bg animate">
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+						</div>
+					</section>
+				</div>
 				<div class="owl-carousel components couple">	
-					<div class="column">
+					<div class="column space-default">
 						<div class="sm-12-12 ">
 							<h2 class="a-center font-dancing section-title">Os Noivos</h2>
 							<div class="couple-item">
@@ -53,7 +195,7 @@
 									<img class="hidden" src="img/couple/2.jpg" alt="">
 								</div>
 								<div class="a-center space-title">
-									<p class="font-dancing couple-name">Natália & Sérgio</p>
+									<p class="font-dancing couple-name">{{noiva}} & {{noivo}}</p>
 								</div>
 							</div>
 						</div>
@@ -72,7 +214,7 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div class="space-default">
 						<h2 class="a-center font-dancing section-title">Os Noivos</h2>
 						<div class="column">
 							<div class="sm-6-12 ">
@@ -80,7 +222,7 @@
 									<div class="couple-img circle-img" style="background-image: url('img/couple/bride.jpg')">
 										<img class="hidden" src="img/couple/bride.jpg" alt="">
 									</div>
-									<p class="font-montserrrat font-dancing couple-name a-center space-title">Natália C. Fazzolari</p>
+									<p class="font-montserrrat font-dancing couple-name a-center space-title">{{noiva}}</p>
 									<p class="font-montserrrat a-center max-width">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat porro vel ut, obcaecati repellendus dolorem possimus eveniet aperiam sint, distinctio quis provident asperiores velit nisi ratione maiores exercitationem inventore sunt.</p>
 								</div>
 							</div>
@@ -89,24 +231,24 @@
 									<div class="couple-img circle-img" style="background-image: url('img/couple/groom.jpg')">
 										<img class="hidden" src="img/couple/groom.jpg" alt="">
 									</div>
-									<p class="font-montserrrat font-dancing couple-name a-center space-title">Sérgio A M Junior</p>
+									<p class="font-montserrrat font-dancing couple-name a-center space-title">{{noivo}}</p>
 									<p class="font-montserrrat a-center max-width">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat porro vel ut, obcaecati repellendus dolorem possimus eveniet aperiam sint, distinctio quis provident asperiores velit nisi ratione maiores exercitationem inventore sunt.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="couple-item single-col">
+					<div class="couple-item space-default single-col">
 						<h2 class="a-center font-dancing section-title">Os Noivos</h2>
 						<div class="couple-img circle-img   " style="background-image: url('img/couple/1.jpg')">
 							<img class="hidden" src="img/couple/bride.jpg" alt="">
 						</div>
-						<p class="   font-dancing couple-name a-center space-title">Natália & Sérgio</p>
+						<p class="   font-dancing couple-name a-center space-title">{{noiva}} & {{noivo}}</p>
 						<div class=" ">
 							<p class="font-montserrrat a-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat porro vel ut, obcaecati repellendus dolorem possimus eveniet aperiam sint, distinctio quis provident asperiores velit nisi ratione maiores exercitationem inventore sunt.</p>
 							<p class="font-montserrrat a-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione deserunt aliquid exercitationem, ab dolores quo at modi quis. Nesciunt nisi dolores et ad doloremque molestiae, provident necessitatibus minus tempora dolore.</p>
 						</div>
 					</div>
-					<div class="couple under-other single-col">
+					<div class="couple space-default under-other single-col">
 						<h2 class="a-center font-dancing section-title">Os Noivos</h2>
 						<div class="couple-item img-holder">
 							<div class="   couple-img circle-img" style="background-image: url('img/couple/bride_1.jpg')">
@@ -117,7 +259,7 @@
 							</div>
 						</div>
 						<div class="a-center   space-title">
-							<p class="font-dancing couple-name">Natália & Sérgio</p>
+							<p class="font-dancing couple-name">{{noiva}} & {{noivo}}</p>
 						</div>
 						<div class="couple-item a-center  ">
 							<p class="font-montserrrat">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat deserunt accusantium ea, commodi, ut maiores dolores sint excepturi pariatur vel numquam voluptates veniam? Ipsam eius dolor magnam, maxime neque nesciunt?</p>
@@ -126,9 +268,9 @@
 					</div>
 				</div>
 
-				<h3 class="components-title">Local</h3>
+<!-- 				<h3 class="components-title"><span>L</span><span>o</span><span>c</span><span>a</span><span>l</span></h3> -->
 				<div class="owl-carousel components">
-					<section class="space-default local">
+					<section class="space-defult space-bottom local">
 						<div class="containe max-width-content">
 							<!-- <h2 class="a-center section-title">Eventos</h2> -->
 							<div class="column">
@@ -273,7 +415,7 @@
 					</section>
 				</div>
 
-				<h3 class="components-title">Contagem regressiva</h3>
+				<!-- <h3 class="components-title"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>g</span><span>e</span><span>m</span><span> </span><span>r</span><span>e</span><span>g</span><span>r</span><span>e</span><span>s</span><span>s</span><span>i</span><span>v</span><span>a</span></h3> -->
 				<div class="owl-carousel components">	
 
 					<section class="space-default timer overlay">
@@ -475,113 +617,122 @@
 
 				</div>
 
-				<h3 class="components-title">Galeria de Foto</h3>
+				<!-- <h3 class="components-title">Galeria de Foto</h3> -->
 				<div class="owl-carousel components">
-				
-					<div class="components-item gallery column less-centered">
-						<div class="sm-6-12 md-4-12">
+					<div>
+						<h2 class=" component-title">Galeria de Fotos</h2>
+						<div class="components-item gallery column less-centered">
+							<div class="sm-6-12 md-4-12">
+								<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
+									<img src="img/gallery/party.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-6-12 md-4-12">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
+									<img src="img/gallery/party_1.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-6-12 md-4-12">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_2.jpg')">
+									<img src="img/gallery/party_2.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-6-12 md-4-12">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
+									<img src="img/gallery/party_3.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-6-12 md-4-12">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
+									<img src="img/gallery/party_4.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-6-12 md-4-12">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_5.jpg')">
+									<img src="img/gallery/party_5.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<h2 class=" component-title">Galeria de Fotos</h2>
+						<div class="components-item gallery gallery-tall less-centered">
+							<div class="sm-25">
+								<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
+									<img src="img/gallery/party.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-25">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
+									<img src="img/gallery/party_1.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-25">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
+									<img src="img/gallery/party_3.jpg" alt="">
+								</div>
+							</div>
+							<div class="sm-25">
+								<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
+									<img src="img/gallery/party_4.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<h2 class=" component-title">Galeria de Fotos</h2>
+						<div class="gallery gallery-featured">
 							<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
 								<img src="img/gallery/party.jpg" alt="">
 							</div>
-						</div>
-						<div class="sm-6-12 md-4-12">
+					
 							<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
 								<img src="img/gallery/party_1.jpg" alt="">
 							</div>
-						</div>
-						<div class="sm-6-12 md-4-12">
+						
 							<div class="gallery-item" style="background-image: url('img/gallery/party_2.jpg')">
 								<img src="img/gallery/party_2.jpg" alt="">
 							</div>
-						</div>
-						<div class="sm-6-12 md-4-12">
+						
 							<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
 								<img src="img/gallery/party_3.jpg" alt="">
 							</div>
-						</div>
-						<div class="sm-6-12 md-4-12">
+						
 							<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
 								<img src="img/gallery/party_4.jpg" alt="">
 							</div>
 						</div>
-						<div class="sm-6-12 md-4-12">
+					</div>
+
+
+					<div>
+						<h2 class=" component-title">Galeria de Fotos</h2>
+						<div class="gallery gallery-five less-centered">				
+							<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
+								<img src="img/gallery/party_1.jpg" alt="">
+							</div>
+							<div class="gallery-item" style="background-image: url('img/gallery/party_2.jpg')">
+								<img src="img/gallery/party_2.jpg" alt="">
+							</div>
+							<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
+								<img src="img/gallery/party_3.jpg" alt="">
+							</div>
+							<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
+								<img src="img/gallery/party_4.jpg" alt="">
+							</div>
 							<div class="gallery-item" style="background-image: url('img/gallery/party_5.jpg')">
 								<img src="img/gallery/party_5.jpg" alt="">
 							</div>
 						</div>
 					</div>
-		
-					<div class="components-item gallery gallery-tall less-centered">
-						<div class="sm-25">
-							<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
-								<img src="img/gallery/party.jpg" alt="">
-							</div>
-						</div>
-						<div class="sm-25">
-							<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
-								<img src="img/gallery/party_1.jpg" alt="">
-							</div>
-						</div>
-						<div class="sm-25">
-							<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
-								<img src="img/gallery/party_3.jpg" alt="">
-							</div>
-						</div>
-						<div class="sm-25">
-							<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
-								<img src="img/gallery/party_4.jpg" alt="">
-							</div>
-						</div>
-					</div>
-
-					<div class="gallery gallery-featured">
-						<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
-							<img src="img/gallery/party.jpg" alt="">
-						</div>
-				
-						<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
-							<img src="img/gallery/party_1.jpg" alt="">
-						</div>
-					
-						<div class="gallery-item" style="background-image: url('img/gallery/party_2.jpg')">
-							<img src="img/gallery/party_2.jpg" alt="">
-						</div>
-					
-						<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
-							<img src="img/gallery/party_3.jpg" alt="">
-						</div>
-					
-						<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
-							<img src="img/gallery/party_4.jpg" alt="">
-						</div>
-				
-					</div>
-
-
-					<div class="gallery gallery-five less-centered">				
-						<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
-							<img src="img/gallery/party_1.jpg" alt="">
-						</div>
-						<div class="gallery-item" style="background-image: url('img/gallery/party_2.jpg')">
-							<img src="img/gallery/party_2.jpg" alt="">
-						</div>
-						<div class="gallery-item" style="background-image: url('img/gallery/party_3.jpg')">
-							<img src="img/gallery/party_3.jpg" alt="">
-						</div>
-						<div class="gallery-item" style="background-image: url('img/gallery/party_4.jpg')">
-							<img src="img/gallery/party_4.jpg" alt="">
-						</div>
-						<div class="gallery-item" style="background-image: url('img/gallery/party_5.jpg')">
-							<img src="img/gallery/party_5.jpg" alt="">
-						</div>
-					</div>
 				
 				</div>
-				<h3 class="components-title">Página de Recados</h3>
+				<!-- <h3 class="components-title">Página de Recados</h3> -->
 				<div class="owl-carousel components">
-					<section class="space-default notes">
+					<section class="space-defaul notes">
 						<div class="container max-width-content">
-							<h2 class="title-doc a-center">Página de Recados</h2>
+							<h2 class="component-title">Página de Recados</h2>
 							<div class="notes-group ">
 								<div class="sm-6-12">
 									<div class="notes-item">
@@ -633,27 +784,13 @@
 										<p class="notes-connect">-Cunhado</p>
 									</div>
 								</div>
-								<div class="sm-6-12">
-									<div class="notes-item">
-										<p class="notes-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quo nam hic odio ratione, voluptas vero velit. Beatae fuga quam numquam sed iure sequi debitis, quibusdam labore qui voluptatem laboriosam.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
-									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="notes-item">
-										<p class="notes-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
-										<p class="notes-author">Fernanda Muniz</p>
-										<p class="notes-connect">-Cunhado</p>
-									</div>
-								</div>
 							</div>
 						</div>
 					</section>
 
-					<section class="space-default notes box with-pic">
+					<section class="space-defaut notes box with-pic">
 						<div class="container">
-							<h2 class="title-doc a-center">Página de Recados</h2>
+							<h2 class="a-center component-title">Página de Recados</h2>
 							<div class="notes-group column">
 								<div class="sm-6-12">
 									<div class="notes-item">
@@ -708,10 +845,160 @@
 					</section>
 				</div>
 
-				<h3 class="components-title">Blog</h3>
-				<div class="owl-carousel components">
-					<div class="containr">
-						<!-- <h2 class="a-center sans-serif section-title">Nosso Blog</h2> -->
+				<!-- <h3 class="components-title">Blog</h3> -->
+				<div class="owl-carousel components space-default">
+					<div class="container">
+						<h2 class="a-center component-title">Blog do casal</h2>
+						<div class="blog blog-default column">
+							<div class="sm-4-12">
+								<div class="blog_item">
+									<div class="blog_img bg-img" style="background-image: url('img/noiva.jpeg')">
+										<figure>
+											<img class="hidden" src="img/noiva.jpeg" alt="">
+										</figure>
+									</div>
+									<div class="blog_content">
+										<a href="#"><h2 class="blog_content-title">title-img</h2></a>
+										<p class="blog_content-p">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
+											<a href="#" class="a-left">Continuar lendo...</a>
+										</p>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="sm-4-12">
+								<div class="blog_item">
+									<div class="blog_img bg-img" style="background-image: url('img/festa.jpg')">
+										<figure>
+											<img class="hidden" src="img/festa.jpg" alt="">
+										</figure>
+									</div>
+									<div class="blog_content">
+										<a href="#"><h2 class="blog_content-title">title-img</h2></a>
+										<p class="blog_content-p">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
+											<a href="#" class="a-left">Continuar lendo...</a>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="sm-4-12">
+								<div class="blog_item">
+									<div class="blog_img bg-img" style="background-image: url('img/madrinhas.jpg')">
+										<figure>
+											<img class="hidden" src="img/madrinhas.jpg" alt="">
+										</figure>
+									</div>
+									<div class="blog_content">
+										<a href="#"><h2 class="blog_content-title">title-img</h2></a>
+										<p class="blog_content-p">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
+											<a href="#" class="a-left">Continuar lendo...</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<h2 class=" component-title">Blog do casal</h2>
+						<div class="blog bg-overlay column">
+							<div class="sm-4-12">
+								<div class="blog_item overlay bg-img" style="background-image: url('img/noiva.jpeg')">
+									<figure>
+										<img class="hidden" src="img/noiva.jpeg" alt="">
+									</figure>
+									<div>
+										<h2>Saiba como foi meu dia de noiva</h2>
+										<div class="shared-list">
+											<ul>
+												<li>
+													<a class="facebook" href="#">
+														<i class="fa fa-facebook" aria-hidden="true"></i>
+													</a>
+												</li>
+												<li>
+													<a class="twitter" href="#">
+														<i class="fa fa-twitter" aria-hidden="true"></i>
+													</a>
+												</li>
+												<li>
+													<a class="whatsapp" href="#">
+														<i class="fa fa-whatsapp" aria-hidden="true"></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="sm-4-12 ">
+								<div class="blog_item overlay bg-img" style="background-image: url('img/festa.jpg')">
+									<figure>
+										<img class="hidden" src="img/festa.jpg" alt="">
+									</figure>
+									<div>
+										<h2>Onde se hospedar próximo a ceriminia?</h2>
+										<div class="shared-list">
+											<ul>
+												<li>
+													<a class="facebook" href="#">
+														<i class="fa fa-facebook" aria-hidden="true"></i>
+													</a>
+												</li>
+												<li>
+													<a class="twitter" href="#">
+														<i class="fa fa-twitter" aria-hidden="true"></i>
+													</a>
+												</li>
+												<li>
+													<a class="whatsapp" href="#">
+														<i class="fa fa-whatsapp" aria-hidden="true"></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="sm-4-12 ">
+								<div class="blog_item overlay bg-img" style="background-image: url('img/madrinhas.jpg')">
+									<figure>
+										<img class="hidden" src="img/madrinhas.jpg" alt="">
+									</figure>
+									<div>
+										<h2>Como será a vestimenta?</h2>
+										<div class="shared-list">
+											<ul>
+												<li>
+													<a class="facebook" href="#">
+														<i class="fa fa-facebook" aria-hidden="true"></i>
+													</a>
+												</li>
+												<li>
+													<a class="twitter" href="#">
+														<i class="fa fa-twitter" aria-hidden="true"></i>
+													</a>
+												</li>
+												<li>
+													<a class="whatsapp" href="#">
+														<i class="fa fa-whatsapp" aria-hidden="true"></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<h2 class="a-cente component-title">Blog do casal</h2>
 						<div class="card column">
 							<div class="sm-4-12 md-6-12">
 								<div class="card_item">
@@ -823,65 +1110,6 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="containr">
-						<!-- <h2 class="a-center sans-serif section-title">Nosso Blog</h2> -->
-						<div class="card column">
-							<div class="sm-4-12">
-								<div class="card_item">
-									<div class="card_img">
-										<figure>
-											<a href="#"><img src="img/noiva.jpeg" alt=""></a>
-										</figure>
-									</div>
-									<div class="card_content">
-										<a href="#"><h2 class="card_content-title">title-img</h2></a>
-										<p class="card_content-p">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
-										</p>
-										<time class="card_content-time top-right-radius" datatime="2017-01-10"><i class="fa fa-calendar-o" aria-hidden="true"></i> 10/01/2017</time>
-										<a class="btn-block card_content-btn btn btn-theme" href="#">Ver mais</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="sm-4-12">
-								<div class="card_item">
-									<div class="card_img">
-										<figure>
-											<a href="#"><img src="img/festa.jpg" alt=""></a>
-										</figure>
-									</div>
-									<div class="card_content">
-										<a href="#"><h2 class="card_content-title">title-img</h2></a>
-										<p class="card_content-p">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
-										</p>
-										<time class="card_content-time top-right-radius" datatime="2017-01-10"><i class="fa fa-calendar-o" aria-hidden="true"></i> 10/01/2017</time>
-										<a class="btn-block card_content-btn btn btn-theme" href="#">Ver mais</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="sm-4-12">
-								<div class="card_item">
-									<div class="card_img">
-										<figure>
-											<a href="#"><img src="img/madrinhas.jpg" alt=""></a>
-										</figure>
-									</div>
-									<div class="card_content">
-										<a href="#"><h2 class="card_content-title">title-img</h2></a>
-										<p class="card_content-p">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
-										</p>
-										<time class="card_content-time top-right-radius" datatime="2017-01-10"><i class="fa fa-calendar-o" aria-hidden="true"></i> 10/01/2017</time>
-										<a class="btn-block card_content-btn btn btn-theme" href="#">Ver mais</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
  			</div>
  		</section>
@@ -951,7 +1179,7 @@
 		</footer>
 
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Montserrat:300,400,500|Poppins:600,700|Dancing+Script:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Montserrat:300,400,500|Poppins:600,700|Dancing+Script:400,700|Petit+Formal+Script" rel="stylesheet">
 		<script src="plugins/jQuery/jquery.js"></script>
 		<script type="text/javascript" src="plugins/OwlCarousel/owl.carousel.js"></script>
 
