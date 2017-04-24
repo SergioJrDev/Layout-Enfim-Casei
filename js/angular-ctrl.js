@@ -1,7 +1,7 @@
 const app = angular.module('App', []);
 
 app.controller('appCtrl', ['$scope', function($scope){
-	$scope.noiva = 'Natal';
+	$scope.noiva = 'Natália';
 	$scope.noivo = 'Sérgio';
 
 

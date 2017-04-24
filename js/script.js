@@ -37,7 +37,9 @@ $(document).ready(function(){
 
  	$(".owl-carousel").owlCarousel({
 	    autoHeight: true,
-	    items:1
+	    items:1,
+	    nav: true,
+	    navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
  	});
 });
 
