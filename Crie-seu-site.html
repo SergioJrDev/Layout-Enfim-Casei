@@ -44,17 +44,32 @@
  		<section class="space-default featured">
  			<div class="container">
 				<h2 class=" title-descr tab-bottom font-poppins">Monte seu site</h2>
+	
+					<form class="form column">
+						<div class="sm-6-12">
+							<div class="input-group">
+								<label class="label">Digite o nome da noiva</label>
+								<input type="text" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="">
+							</div>
+							<div class="input-group">
+								<label class="label">Digite o nome do noivo</label>
+								<input type="text" ng-model="names.noivo" ng-change="changeName(names)" class="input" name="">
+							</div>
+						</div>
+<!-- 						<div class="sm-6-12">
+							<div class="input-group">
+								<label class="label">Escolha a data do casamento</label>
+								<input type="date" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="">
+							</div>
+							<div class="input-group">
+								<label class="label">Escolha a data do casamento</label>
+								<input type="color" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="">
+							</div>
+						</div> -->
+					</form>
+				
+
 				<p>Selecione o que você gostaria de ter no seu site.</p>
-				<form class="form">
-					<div class="input-group">
-						<label class="label">Digite o nome da noiva</label>
-						<input type="text" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="">
-					</div>
-					<div class="input-group">
-						<label class="label">Digite o nome do noivo</label>
-						<input type="text" ng-model="names.noivo" ng-change="changeName(names)" class="input" name="">
-					</div>
-				</form>
 
 				<div class="owl-carousel components">
 					<section class="main auto-h apresentation overlay">
@@ -268,9 +283,10 @@
 					</div>
 				</div>
 
-<!-- 				<h3 class="components-title"><span>L</span><span>o</span><span>c</span><span>a</span><span>l</span></h3> -->
+			<h2 class="component-title">Locais</h2>
+			<div class="space-bottom">
 				<div class="owl-carousel components">
-					<section class="space-defult space-bottom local">
+					<section class="space-defult local">
 						<div class="containe max-width-content">
 							<!-- <h2 class="a-center section-title">Eventos</h2> -->
 							<div class="column">
@@ -294,7 +310,7 @@
 										<div class="local-details">
 											<p class="date"><i class="fa fa-clock-o" aria-hidden="true"></i> 10/12/2017, 20h00</p>
 											<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> Av Paulista, #188, São Paulo/SP</p>
-											<a href="#" class="btn btn-theme mg-20-top">Ver local</a>
+											<!-- <a href="#" class="btn btn-theme mg-20-top">Ver local</a> -->
 										</div>
 									</div>
 								</div>
@@ -368,7 +384,7 @@
 										<div class="local-details">
 											<p class="date"><i class="fa fa-clock-o" aria-hidden="true"></i> 10/12/2017, 20h00</p>
 											<p class="address"><i class="fa fa-map-marker" aria-hidden="true"></i> Av Paulista, #188, São Paulo/SP</p>
-											<a href="#" class="btn btn-theme mg-20-top">Ver local</a>
+											<!-- <a href="#" class="btn btn-theme mg-20-top">Ver local</a> -->
 										</div>
 									</div>
 								</div>
@@ -414,10 +430,96 @@
 						</div>
 					</section>
 				</div>
+			</div>
 
-				<!-- <h3 class="components-title"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>g</span><span>e</span><span>m</span><span> </span><span>r</span><span>e</span><span>g</span><span>r</span><span>e</span><span>s</span><span>s</span><span>i</span><span>v</span><span>a</span></h3> -->
-				<div class="owl-carousel components">	
+				<h2 class="component-title">Confirmação de presença</h2>
+				<div class="space-bottom">
+					<div class="owl-carousel components ">
+						<div class="rsvp rsvp-default space-default">
+							<div class="container">
+								<h2 class="a-center">RSVP</h2>
+								<div class="form max-width">
+									<div class="input-group">
+										<label for="name" class="label">Digite seu nome</label>
+										<input type="text" class="input" id="name" name="name">
+									</div>
+									<div class="input-group">
+										<label for="email" class="label">Quantos convidados irá levar?</label>
+										<select class="input">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</select>
+									</div>
+									<div class="a-center">
+										<button class="btn btn-theme btn-pink btn-uppercase" type="submit">Confirmar Presença</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="rsvp space-default rsvp-pink">
+							<div class="container">
+								<h2 class="a-center">RSVP</h2>
+								<p class="a-center">Sua presença é muito importante para nós!</p>
+								<div class="form max-width">
+									<div class="input-group">
+										<label for="name" class="label">Digite seu nome</label>
+										<input type="text" class="input" id="name" name="name">
+									</div>
+									<div class="input-group">
+										<label for="email" class="label">Quantos convidados irá levar?</label>
+										<select class="input">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</select>
+									</div>
+									<button class="btn btn-theme btn-dark btn-block btn-uppercase" type="submit">Confirmar Presença</button>
+								</div>
+							</div>
+						</div>
+						<div class="rsvp space-default rsvp-font">
+							<div class="container">
+								<h2 class="a-center font-dancing">Confirmação de presença</h2>
+								<div class="form max-width">
+									<div class="column">
+										<div class="sm-8-12">
+											<div class="input-group">
+												<label for="name" class="label font-dancing">Digite seu nome</label>
+												<input type="text" class="input" id="name" name="name">
+											</div>
+										</div>
+										<div class="sm-4-12">
+											<div class="input-group">
+												<label for="email" class="label font-dancing"># Convidados</label>
+												<select class="input">
+													<option>0</option>
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="a-rigt">
+									<button class="btn btn-theme btn-dark btn-uppercase" type="submit">Confirmar Presença</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<h2 class="component-title">Contagem regressiva</h2>
+				<div class="owl-carousel components space-bottom">	
 					<section class="space-default timer overlay">
 						<div class="cntainer max_width">
 							<h2 class="a-center section-title font-montserrrat">Contagem regressiva para o grande dia...</h2>
@@ -618,9 +720,10 @@
 				</div>
 
 				<!-- <h3 class="components-title">Galeria de Foto</h3> -->
+				<h2 class=" component-title">Galeria de Fotos</h2>
 				<div class="owl-carousel components">
 					<div>
-						<h2 class=" component-title">Galeria de Fotos</h2>
+						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="components-item gallery column less-centered">
 							<div class="sm-6-12 md-4-12">
 								<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
@@ -655,7 +758,7 @@
 						</div>
 					</div>
 					<div>
-						<h2 class=" component-title">Galeria de Fotos</h2>
+						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="components-item gallery gallery-tall less-centered">
 							<div class="sm-25">
 								<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
@@ -681,7 +784,7 @@
 					</div>
 
 					<div>
-						<h2 class=" component-title">Galeria de Fotos</h2>
+						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="gallery gallery-featured">
 							<div class="gallery-item" style="background-image: url('img/gallery/party.jpg')">
 								<img src="img/gallery/party.jpg" alt="">
@@ -707,7 +810,7 @@
 
 
 					<div>
-						<h2 class=" component-title">Galeria de Fotos</h2>
+						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="gallery gallery-five less-centered">				
 							<div class="gallery-item" style="background-image: url('img/gallery/party_1.jpg')">
 								<img src="img/gallery/party_1.jpg" alt="">
@@ -845,38 +948,37 @@
 					</section>
 				</div>
 
-				<!-- <h3 class="components-title">Blog</h3> -->
+				<h2 class="component-title">Blog do casal</h2>
 				<div class="owl-carousel components space-default">
 					<div class="containr">
-						<h2 class="a-center component-title">Blog do casal</h2>
 						<div class="blog blog-default column">
 							<div class="sm-4-12">
 								<div class="blog_item">
-									<div class="blog_img bg-img" style="background-image: url('img/noiva.jpeg')">
+									<div class="blog_img bg-img" style="background-image: url('img/Blog/blog.jpg')">
 										<figure>
 											<img class="hidden" src="img/noiva.jpeg" alt="">
 										</figure>
 									</div>
 									<div class="blog_content">
-										<a href="#"><h2 class="blog_content-title">title-img</h2></a>
+										<a href="#"><h2 class="blog_content-title">Nosso destino na lua de mel</h2></a>
+
 										<p class="blog_content-p">
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
 											<a href="#" class="a-left">Continuar lendo...</a>
 										</p>
-
 									</div>
 								</div>
 							</div>
 
 							<div class="sm-4-12">
 								<div class="blog_item">
-									<div class="blog_img bg-img" style="background-image: url('img/festa.jpg')">
+									<div class="blog_img bg-img" style="background-image: url('img/Blog/couple.jpg')">
 										<figure>
 											<img class="hidden" src="img/festa.jpg" alt="">
 										</figure>
 									</div>
 									<div class="blog_content">
-										<a href="#"><h2 class="blog_content-title">title-img</h2></a>
+										<a href="#"><h2 class="blog_content-title">Conheça nossa história</h2></a>
 										<p class="blog_content-p">
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
 											<a href="#" class="a-left">Continuar lendo...</a>
@@ -887,13 +989,13 @@
 
 							<div class="sm-4-12">
 								<div class="blog_item">
-									<div class="blog_img bg-img" style="background-image: url('img/madrinhas.jpg')">
+									<div class="blog_img bg-img" style="background-image: url('img/Blog/dog.jpg')">
 										<figure>
 											<img class="hidden" src="img/madrinhas.jpg" alt="">
 										</figure>
 									</div>
 									<div class="blog_content">
-										<a href="#"><h2 class="blog_content-title">title-img</h2></a>
+										<a href="#"><h2 class="blog_content-title">Veja nossa filha!</h2></a>
 										<p class="blog_content-p">
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam optio iusto numquam fugit omnis! Similique distinctio reiciendis, voluptatem praesentium ipsum...
 											<a href="#" class="a-left">Continuar lendo...</a>
@@ -904,12 +1006,12 @@
 						</div>
 					</div>
 					<div class="containr">
-						<h2 class=" component-title">Blog do casal</h2>
+						<!-- <h2 class=" component-title">Blog do casal</h2> -->
 						<div class="blog bg-overlay column">
 							<div class="sm-4-12">
-								<div class="blog_item overlay bg-img" style="background-image: url('img/noiva.jpeg')">
+								<div class="blog_item overlay bg-img" style="background-image: url('img/Blog/bride.jpg')">
 									<figure>
-										<img class="hidden" src="img/noiva.jpeg" alt="">
+										<img class="hidden" src="img/Blog/bride.jpg" alt="">
 									</figure>
 									<div>
 										<h2>Saiba como foi meu dia de noiva</h2>
@@ -937,12 +1039,12 @@
 							</div>
 
 							<div class="sm-4-12 ">
-								<div class="blog_item overlay bg-img" style="background-image: url('img/festa.jpg')">
+								<div class="blog_item overlay bg-img" style="background-image: url('img/Blog/hotel.jpg')">
 									<figure>
-										<img class="hidden" src="img/festa.jpg" alt="">
+										<img class="hidden" src="img/Blog/hotel.jpg" alt="">
 									</figure>
 									<div>
-										<h2>Onde se hospedar próximo a ceriminia?</h2>
+										<h2>Onde se hospedar próximo a cerimônia?</h2>
 										<div class="shared-list">
 											<ul>
 												<li>
@@ -967,12 +1069,12 @@
 							</div>
 
 							<div class="sm-4-12 ">
-								<div class="blog_item overlay bg-img" style="background-image: url('img/madrinhas.jpg')">
+								<div class="blog_item overlay bg-img" style="background-image: url('img/Blog/music.jpg')">
 									<figure>
-										<img class="hidden" src="img/madrinhas.jpg" alt="">
+										<img class="hidden" src="img/Blog/music.jpg" alt="">
 									</figure>
 									<div>
-										<h2>Como será a vestimenta?</h2>
+										<h2>Como será a playlist?</h2>
 										<div class="shared-list">
 											<ul>
 												<li>
@@ -998,7 +1100,6 @@
 						</div>
 					</div>
 					<div class="containe">
-						<h2 class="a-cente component-title">Blog do casal</h2>
 						<div class="card column">
 							<div class="sm-4-12 md-6-12">
 								<div class="card_item">

@@ -39,3 +39,33 @@
     font-size: 26px;
     margin-bottom: 20px;
 }
+
+.featured {
+	@media (min-width: sm) {
+		&-box.column {
+			margin-bottom: 350px;
+			.featured-content {
+				padding: 0 30px;
+				.title-descr {
+					margin-bottom: 20px;
+					color: #fe6a2f;
+					font-weight: 500;
+				}
+			}
+			.featured-icon {
+			     display: flex; 
+			     align-items: center; 
+			     justify-content: center; 
+			}
+		}
+	}
+	@media (min-width: md) {
+		&-box.column {
+		    max-width: 970px;
+		    margin: 0 auto 150px auto;
+		    .border {
+		    	/*border-right: 1px solid #ebebeb;*/
+		    }
+		}
+	}
+}
