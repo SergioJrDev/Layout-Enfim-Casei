@@ -1,0 +1,60 @@
+.notes {
+	.container {
+		overflow: initial;
+	}
+	&-item {
+		padding: 20px;
+	}
+
+	&-img {
+		width: 100px;
+		height: 100px;
+		background-size: cover;
+		background-position: center;
+		border-radius: 50%;
+		img {
+			display: none;
+		}
+	}
+
+	.first-letter:first-letter {
+		color: #333;
+		font-weight: 400;
+		font-size: 1.5rem;
+	}
+
+	&-author {
+		font-weight: 500;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+	&-connect {
+		font-size: .8rem;
+		margin-bottom: 0;
+	}
+	&.box {
+		bg-image(cover, center, '../../img/notes2.jpg');
+		.notes-item {
+			margin-bottom: 20px;
+			background: rgba(0, 0, 0, 0.62);
+			/*height: 100%;*/
+		}
+		p {
+			color: #fff;
+		}
+	}
+	&.with-pic {
+		background: none;
+		.notes-p {
+			font-size: 15px;
+		}
+		.notes-content {
+			width: calc(100% - 114px);
+		}
+		.notes-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
