@@ -2,6 +2,10 @@ a, button {
 	cursor: pointer;
 }
 
+a {
+	color: color_theme;
+} 
+
 .btn {
 	color: color_theme;
 	display: inline-block;
@@ -28,6 +32,18 @@ a, button {
 	&-shadow {
 		box-shadow: 4px 4px color_theme_dark;
 	}
+	&-danger {
+	    background: #ff6d6d;
+	    padding: 3px 8px;
+	    border-radius: 4px;
+	    color: #fff;
+	}
+	&-gray {
+		background: #565656;
+		padding: 3px 8px;
+		border-radius: 4px;
+		color: #fff;
+	}
 	&-block {
 		width: 100%;
 		display: block;
@@ -45,23 +61,8 @@ a, button {
 	&-uppercase {
 		text-transform: uppercase;
 	}
-	&-icon {
-		font-size: 0;
-		mx-size(30px);
-		text-align: center;
-		display: block;
-		&:before {
-			display: block;
-			position: absolute;
-			font-family: FontAwesome
-  			content: "\f09a";
-  			font-size: 20px;
-		    top: 5px;
-		    left: 0;
-		    right: 0;
-		}
-		&.icon-facebook {
-			content: "\f09a";
-		}
+	&-small {
+		padding: 5px;
+		font-size: 14px;
 	}
 }

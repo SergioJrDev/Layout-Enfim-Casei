@@ -63,7 +63,7 @@ function custom_post_type() {
 
 	$options = array(
 		'name' => 'Modelos',
-		'support' => ['title']
+		'support' => ['title', 'author']
 	);
 	register_posttype($options);
 

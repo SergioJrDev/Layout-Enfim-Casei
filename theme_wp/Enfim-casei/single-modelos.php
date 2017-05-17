@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php
-			$noivo = get_field('nome_do_noivo');
-			$noiva = get_field('nome_do_noiva');
+			$noivo = get_post_meta(get_the_ID(), 'nome_do_noivo')[0];
+			$noiva = get_post_meta(get_the_ID(), 'nome_do_noiva')[0];
 
-			if(get_field('header')) {
-				$header = get_field('header');
+			if(get_field('header') || get_post_meta(get_the_ID(), 'header')[0]) {
+				$header = get_post_meta(get_the_ID(), 'header')[0];
 				if($header == 1) { ?>
 					<section class="main auto-h apresentation overlay">
 						<header class="default transparent">
@@ -140,8 +140,8 @@
 				<?php }
 			}
 
-			if(get_field('noivos')) {
-				$noivos = get_field('noivos');
+			if(get_field('noivos') || get_post_meta(get_the_ID(), 'noivos')) {
+				$noivos = get_post_meta(get_the_ID(), 'noivos')[0];
 				if($noivos == 1) { ?>
 					<div class="container max-width-content">
 						<div class="column space-default">
@@ -245,8 +245,8 @@
 				<?php } ?>
 			<?php } 
 
-			if(get_field('local')) {
-				$local = get_field('local');
+			if(get_field('local') || get_post_meta(get_the_ID(), 'local')) {
+				$local = get_post_meta(get_the_ID(), 'local')[0];
 				if($local == 1) { ?>
 					<section class="space-defult local mg-bottom">
 						<div class="containe max-width-content">
@@ -393,11 +393,87 @@
 						</div>
 					</section>
 				<?php } ?>
+				<?php if($local == 3) { ?>
+					<section class="space-default local with-title">
+						<input type="radio" class="hidden" name="local" value="3">
+						<div class="container max-widt-content">
+							<!-- <h2 class="font-dacing a-center mg-bottom">O Casamento</h2> -->
+							<div class="column">
+								<div class="sm-6-12 border-right">
+									<div class="local-item a-center">
+										<h2 >Cerimônia</h2>
+										<p>15 de maio de 2017, ás 20h</p>
+										<p>Av Alberto Byington, #178</p>
+									</div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7312.976294812386!2d-46.66058329394004!3d-23.58682003096726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59f1069d11d1%3A0xcb936109af9ce541!2sParque+Ibirapuera!5e0!3m2!1spt-BR!2sbr!4v1494531597526" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+								<div class="sm-6-12">
+									<div class="local-item a-center">
+										<h2 >Festa</h2>
+										<p class="local-featured open-sans">Sábado, 15 de maio de 2017, ás 20h</p>
+										<p class="local-featured open-sans">Av Alberto Byington, #178</p>
+									</div>
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.145903743023!2d-46.656441185020775!3d-23.563202767545324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.+Paulista%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1494531673158"  height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</section>
+				<?php } ?>
+				<?php if($local == 4) { ?>
+					<section class="space-default local with-img">
+						<input type="radio" class="hidden" name="local" value="4">
+						<div class="container max-width-content">
+							<div class="column">
+					<!-- 			<div class="sm-4-12">
+									<div class="local-item a-center">
+										<div class="local-img bg-cover" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/local/baby.jpg')">
+											<img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/local/party.jpg">
+										</div>
+										<div class="local-content">
+											<h2 >Chá de cozinha</h2>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+											<p class="local-featured open-sans">Sábado, 15 de maio de 2017, ás 20h</p>
+											<p class="local-featured open-sans">Av Alberto Byington, #178</p>
+										</div>
+									</div>
+								</div> -->
+
+								<div class="sm-6-12">
+									<div class="local-item a-center">
+										<div class="local-img bg-cover" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/local/wedding.jpg')">
+											<img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/local/party.jpg">
+										</div>
+										<div class="local-content">
+											<h2 >Cerimônia</h2>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+											<p class="local-featured open-sans">Sábado, 15 de maio de 2017, ás 20h</p>
+											<p class="local-featured open-sans">Av Alberto Byington, #178</p>
+										</div>
+									</div>
+								</div>
+								<div class="sm-6-12">
+									<div class="local-item a-center">
+										<div class="local-img bg-cover" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/local/party.jpg')">
+											<img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/local/party.jpg">
+										</div>
+										<div class="local-content">
+											<h2 >Festa</h2>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+											<p class="local-featured open-sans">Sábado, 15 de maio de 2017, ás 20h</p>
+											<p class="local-featured open-sans">Av Alberto Byington, #178</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</section>
+				<?php } ?>
 			<?php } 
 
 		
-			if(get_field('rsvp')) {
-				$rsvp = get_field('rsvp');
+			if(get_field('rsvp') || get_post_meta(get_the_ID(), 'rsvp')) {
+				$rsvp = get_post_meta(get_the_ID(), 'rsvp')[0];
 				if($rsvp == 1) { ?>
 					<div class="rsvp rsvp-default space-default">
 						<div class="container">
@@ -487,8 +563,8 @@
 			<?php } 
 
 			
-			if(get_field('contagem')) {
-				$contagem = get_field('contagem');
+			if(get_field('contagem') || get_post_meta(get_the_ID(), 'contagem')) {
+				$contagem = get_post_meta(get_the_ID(), 'contagem')[0];
 				if($contagem == 1) { ?>
 					<section class="space-default timer overlay">
 						<div class="cntainer max_width">
@@ -694,8 +770,8 @@
 			<?php } 
 
 			
-			if(get_field('galeria_de_fotos')) {
-				$galeria_de_fotos = get_field('galeria_de_fotos');
+			if(get_field('galeria_de_fotos') || get_post_meta(get_the_ID(), 'galeria_de_fotos')) {
+				$galeria_de_fotos = get_post_meta(get_the_ID(), 'galeria_de_fotos')[0];
 				if($galeria_de_fotos == 1) { ?>
 					<div class="container">
 						<div class="components-item gallery column less-centered">
@@ -807,8 +883,8 @@
 			<?php }
 
 		
-			if(get_field('recados')) {
-				$recados = get_field('recados');
+			if(get_field('recados') || get_post_meta(get_the_ID(), 'recados')) {
+				$recados = get_post_meta(get_the_ID(), 'recados')[0];
 				if($recados == 1) { ?>
 					<section class="space-default notes">
 						<div class="container max-width-content">
@@ -929,8 +1005,8 @@
 			<?php }
 
 		
-			if(get_field('blog')) {
-				$blog = get_field('blog');
+			if(get_field('blog') || get_post_meta(get_the_ID(), 'blog')) {
+				$blog = get_post_meta(get_the_ID(), 'blog')[0];
 				if($blog == 1) { ?>
 					<div class="container">
 						<div class="space-default">
@@ -1220,4 +1296,59 @@
 			<?php } */
 		?>
 	<?php endwhile; ?>
+	<div class="info a-center">
+		<div class="container">
+			<?php if(is_user_logged_in()) { ?>
+				<div class="column">
+					<div class="xs-6-12">
+						<p>Gostaria de criar outro modelo? <br/> Esse estará salvo em <a href="<?php echo home_url('/meus-dados') ?>">meus dados</a>.</p>
+						<a href="<?php echo home_url('crie-seu-site') ?>" class="btn btn-theme btn-small btn-radius">Criar outro modelo</a>
+					</div>
+					<div class="xs-6-12">
+						<p>Quer seu site como esse modelo?</p>
+						<a href="#" class="btn btn-theme btn-radius">Escolher modelo</a>
+					</div>
+				</div>
+			<?php }  else { ?>
+				<div class="column">
+					<div class="xs-12-12">
+						<p>Gostaria de salvar esse modelo?</p>
+						<a href="#" class="btn btn-theme btn-small btn-radius">Crie sua conta</a>
+					</div>
+				</div>
+				<div class="modal active">
+				<form class="form" method="post">
+					<h2 class="title-descr tab-bottom font-poppins active a-left">Faça seu cadastro</h2>
+					<div class="column">
+						<div class="sm-6-12">
+							<div class="input-group">
+								<label for="user_name">Seu nome e sobrenome *</label>
+								<input type="text" class="input inline" id="user_name" name="user_name">
+							</div>
+						</div>
+						<div class="sm-6-12">
+							<div class="input-group">
+								<label for="user_email">E-mail *</label>
+								<input type="email" class="input inline" id="user_email" name="user_email">
+							</div>
+						</div>
+						<div class="sm-6-12">
+							<div class="input-group">
+								<label for="user_pass">Sua senha *</label>
+								<input type="password" class="input inline" id="user_pass" name="user_pass">
+							</div>
+						</div>
+						<div class="sm-6-12">
+							<div class="input-group">
+								<label for="user_repass">Digite novamente sua senha *</label>
+								<input type="password" class="input inline" id="user_repass" name="user_repass">
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-theme btn-uppercase">Criar conta</button>
+				</form>
+				</div>
+			<?php } ?>
+		</div>
+	</div>
 <?php get_footer(); ?>

@@ -39,22 +39,10 @@ $scripts = [
 		'in_footer' => true,
  	],
 	'owlCarousel' => [
-		'dir' =>  get_template_directory_uri().'/plugins/owlCarousel/owl.carousel.min.js',
+		'dir' =>  get_template_directory_uri().'/plugins/owlcarousel/owl.carousel.min.js',
 		'depends' => array('jQuery'),
 		'version' => '1.0',
 		'in_footer' => true,
- 	],
-	'Angular' => [
-		'dir' =>  get_template_directory_uri().'/plugins/Angular/angular-min.js',
-		'depends' => [],
-		'version' => '1.0',
-		'in_footer' => false,
- 	],
-	'AngularCtrl' => [
-		'dir' =>  get_template_directory_uri().'/js/angular.ctrl.js',
-		'depends' => array('Angular'),
-		'version' => '1.0',
-		'in_footer' => false,
  	],
 ];
 
@@ -74,7 +62,7 @@ $styles = [
 	'Styles' => [
 		'dir' => get_template_directory_uri().'/dist/css/style.css',
 		'depends' => '',
-		'version' => '1',
+		'version' => '2',
 		'in_footer' => false,
 	],
 	'hamburger' => [
@@ -90,19 +78,19 @@ $styles = [
 		'in_footer' => false,
 	],
 	'Google-Fonts' => [
-		'dir' => 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Montserrat:300,400,500|Poppins:600,700|Dancing+Script:400,700|Petit+Formal+Script',
+		'dir' => 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Montserrat:300,400,500|Poppins:600,700|Ubuntu:400,700|Dancing+Script:400,700|Petit+Formal+Script',
 		'depends' => '',
 		'version' => '1',
 		'in_footer' => false,
 	],
 	'OwlCarouselCss' => [
-		'dir' => get_template_directory_uri().'/plugins/OwlCarousel/assets/owl.carousel.min.css',
+		'dir' => get_template_directory_uri().'/plugins/owlcarousel/assets/owl.carousel.min.css',
 		'depends' => '',
 		'version' => '1',
 		'in_footer' => false,
 	],
 	'OwlCarouselTheme' => [
-		'dir' => get_template_directory_uri().'/plugins/OwlCarousel/assets/owl.theme.default.min.css',
+		'dir' => get_template_directory_uri().'/plugins/owlcarousel/assets/owl.theme.default.min.css',
 		'depends' => '',
 		'version' => '1',
 		'in_footer' => false,
@@ -133,6 +121,11 @@ function configHead() {
 	foreach($configs as $config) {
 		echo $config . "\n";
 	}
+}
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
 }
 
 
@@ -170,9 +163,10 @@ function createModel() {
 		$noivo = $_REQUEST['noivo'];
 
 		$args = array(
-			'post_title' => $noiva.'-e-'.$noivo,
+			'post_title' => get_current_user_id().'-'.$noiva.'-e-'.$noivo,
 			'post_type' => 'modelos',
-			'post_status' => 'publish'
+			'post_status' => 'publish',
+			'post_content' => 'Teste Ttete',
 		);
 
 		$post_id = wp_insert_post( $args );
@@ -190,19 +184,112 @@ function createModel() {
 					'nome_do_noiva' => $noiva
 				);
 
-			foreach ($fields as $key => $value) {
-				echo '
-					<script type="text/javascript">
-						console.log("'.$key.' '.$value.'");
-					</script>
-					 ';
-				update_field($key, $value, $post_id);
-			}
+		foreach ($fields as $key => $value) {
+			update_field($key, $value, $post_id);
+			update_post_meta($post_id, $key, $value);
+		}
 
 		wp_redirect(get_permalink($post_id));
+		exit;
 				
 	}
 }
 
+// Delete modelo
+add_action('init', 'deletePost');
+
+function deletePost() {
+	if(isset($_GET['del'])) {
+		$post = $_GET['del'];
+		$author = get_post($post)->post_author;
+		if(get_current_user_id() == $author) {
+			var_dump(wp_delete_post($post));
+		};
+	}
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+	  show_admin_bar(false);
+
+	}
+}
+
+function returnError($check = null, $error) {
+	if($check != null) {
+		$GLOBALS['errors'] = $error;
+	}
+}
+
+// Criar conta
+add_action('init', 'createAccount');
+
+function createAccount() {
+	if(isset($_REQUEST['createAccount'])) {
+		$nome = $_REQUEST['user_name'];
+		$email = $_REQUEST['user_email'];
+		$senha = $_REQUEST['user_pass'];
+		$resenha = $_REQUEST['user_repass'];
+		$nome_da_noiva = $_REQUEST['nome_da_noiva'];
+		$nome_do_noivo = $_REQUEST['nome_do_noivo'];
+		$errors = [];
+
+		if(empty($nome)) {
+			$errors[] = 'Digite seu nome';
+		}
+
+		if(!is_email($email)) {
+			$errors[] = 'Digite um e-mail valido';
+		}
+
+		if(empty($senha) || strlen($senha) < 6) {
+			$errors[] = 'Digite um senha com no mínimo 6 caracteres.';
+		} else if($senha != $resenha) {
+			$errors[] = 'Senhas diferentes. Verifique a confirmação da sua senha.';
+		}
+
+		if(email_exists($email)) {
+			$errors[] = 'E-mail já registrado. Esqueceu sua senha?';
+		}
+
+		if(count($errors) == 0) {
+	 		$id_user = wp_create_user($email, $senha, $email );
+	 		update_field('nome_da_noiva', $nome_da_noiva, 'user_'.$id_user);
+	 		update_field('nome_do_noivo', $nome_do_noivo, 'user_'.$id_user);
+			wp_redirect(home_url('/meus-dados'));
+			exit;
+		} else {
+			returnError(1, $errors);
+		}
+	}
+}
+
+// Login
+add_action('init', 'makeLogin');
+
+function makeLogin() {
+
+	if(isset($_REQUEST['make-login'])) {
+		$email = $_REQUEST['email'];
+		$senha = $_REQUEST['pass'];
+		$errors = [];
+
+		$info = array();
+		$info['user_login'] = $email;
+		$info['user_password'] = $senha;
+		$info['remember'] = true;
+
+		$user_signon = wp_signon($info, false);
+	
+		if (!is_wp_error($user_signon)) {
+			wp_redirect(home_url('/meus-dados'));
+			exit;
+		} else {
+			$errors[] = "E-mail ou senha inválidos. Por favor, confirme seus dados e tente novamente.";
+			returnError(1, $errors);
+		}
+	}
+}
 
 ?>

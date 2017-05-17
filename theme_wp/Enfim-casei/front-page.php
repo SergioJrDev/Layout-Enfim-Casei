@@ -6,24 +6,27 @@
 		 				<h2 class="title-section animate delay to-top font-poppins">Sua nova forma de criar um site de casamento</h2>
 		 				<p class="animate delay to-top">Registre e compartilhe o dia mais importante da sua vida.</p>
  					</div>
- 					<div class="sm-6-12 flex-row-end">
- 						<div class="form form-login animate delay to-top">
- 							<p class="title">Entre com seu usuário e senha</p>
- 							<div class="input-group">
- 								<label for="" class="label">E-mail</label>
- 								<input type="text" class="input">
- 							</div>
- 							<div class="input-group">
- 								<label for="" class="label">Senha</label>
- 								<input type="text" class="input">
- 							</div>
- 							<div class="input-group">
- 								<button type="submit" class="btn btn-theme gradient btn-block">Entrar</button>
- 							</div>
- 							<p>ou</p>
- 							<a href="#">Criar minha conta</a>
- 						</div>
- 					</div>
+ 					<?php if(!is_user_logged_in()) {?>
+	 					<div class="sm-6-12 flex-row-end">
+	 						<form class="form form-login animate delay to-top" method="post">
+	 							<p class="title">Entre com seu usuário e senha</p>
+	 							<div class="input-group">
+	 								<label for="" class="label">E-mail</label>
+	 								<input type="text" class="input" id="email" name="email">
+	 							</div>
+	 							<div class="input-group">
+	 								<label for="" class="label">Senha</label>
+	 								<input type="password" class="input" id="pass" name="pass">
+	 							</div>
+	 							<div class="input-group">
+	 								<input type="hidden" name="make-login" value="1">
+	 								<button type="submit" class="btn btn-theme gradient btn-block">Entrar</button>
+	 							</div>
+	 							<p>ou</p>
+	 							<a href="<?php echo home_url('/cadastro') ?>">Criar minha conta</a>
+	 						</form>
+	 					</div>
+ 					<?php } ?>
  				</div>
  			</div>
  		</section>
@@ -54,7 +57,7 @@
  				<div class="column">
  					<div class="sm-6-12">
  						<h2 class="animate delay to-top title-descr font-poppins tab-bottom">Lista de presente<br/>e cotas para lua de mel</h2>
- 						<p class="animate delay to-top ">Crie sua lista de presentes e aceite contribuições para lua de mel, com pagamento pelo próprio site e receba o valor em dinheiro, sem nenhuma taxa.</p>
+ 						<p class="animate delay to-top ">Crie sua lista de presentes e aceite contribuições para lua de mel, com pagamento pelo próprio site e receba o valor em dinheiro.</p>
  					</div>
  					<div class="sm-6-12 svg-icons">
 						<svg class="icon animate delay to-top">
@@ -113,15 +116,29 @@
  			</div>
  		</section>
 
- 		<section class="space-default a-center overlay how-works">
- 			<div class="container">
- 				<h2 class="title-descr font-poppins">Como funciona</h2>
- 				<ul>
- 					<li class="animate delay to-top"><span>1</span><p>Você se cadastra e cria seu site</p></li>
- 					<li class="animate delay to-top"><span>2</span><p>Em 24h você receberá o login e senha para gerencia-lo</p></li>
- 					<li class="animate delay to-top"><span>3</span><p>Depois de 15 dias, se gostar, faz o pagamento</p></li>
- 					<li class="li-btn animate delay to-top"><a href="#" class="btn btn-theme btn-radius btn-theme-invert btn-shadow">Quero me cadastrar!</a></li>
- 				</ul>
+ 		<section class="space-default how-works">
+ 			<div class="container max-width-content">
+ 				<h2 class="title-descr font-poppins a-center">Como funciona</h2>
+ 				<div class="column">
+ 					<div class="sm-4-12">
+ 						<div class="how-item">
+	 						<span>1</span>
+	 						<p>Você se cadastra e cria quantos modelos de sites quiser, do seu jeito.</p>
+ 						</div>
+ 					</div>
+ 					<div class="sm-4-12">
+ 						<div class="how-item">
+	 						<span>2</span>
+	 						<p>Depois de escolher entre um entre eles, ele será montado e você receberá a senha para acessa-lo.</p>
+ 						</div>
+ 					</div>
+ 					<div class="sm-4-12">
+ 						<div class="how-item">
+	 						<span>3</span>
+	 						<p>Pronto, agora é só começar a publicar suas fotos, textos e divulgar.</p>
+ 						</div>
+ 					</div>
+ 				</div>
  			</div>
  		</section>
 
@@ -134,9 +151,8 @@
  					<div class="sm-4-12 animate delay to-top">
  						<div class="plan-item a-center">
  							<h3 class="font-poppins">Básico</h3>
- 							<p class="value "><span>R$</span>299,<span>00</span></p>
- 							<ul>
- 								
+ 							<p class="value "><span>R$</span>19,<span>00</span></p>
+ 							<ul class="mg-bottom">
  								<li><i class="fa fa-check" aria-hidden="true"></i> Blog</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Responsivo</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Galeria de fotos</li>
@@ -145,6 +161,7 @@
  								<li><i class="fa fa-check" aria-hidden="true"></i> Save the date</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> História do casal</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Página de recados</li>
+ 								<li><i class="fa fa-check" aria-hidden="true"></i> Online por 1 ano</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Suporte</li>
  								<li class="no-has"><i class="fa fa-times" aria-hidden="true"></i> Confirmação de presença</li>
  								<li class="no-has"><i class="fa fa-times" aria-hidden="true"></i> Local da cerimônia/festa</li>
@@ -159,8 +176,8 @@
  						<div class="plan-item a-center featured">
  							<div class="recomendado"></div>
  							<h3 class="font-poppins">Intermediário</h3>
- 							<p class="value "><span>R$</span>399,<span>00</span></p>
- 							<ul>
+ 							<p class="value "><span>R$</span>29,<span>00</span></p>
+ 							<ul class="mg-bottom">
  								<li><i class="fa fa-check" aria-hidden="true"></i> Blog</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Responsivo</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Galeria de fotos</li>
@@ -169,6 +186,7 @@
  								<li><i class="fa fa-check" aria-hidden="true"></i> Save the date</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> História do casal</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Página de recados</li>
+ 								<li><i class="fa fa-check" aria-hidden="true"></i> Online por 1 ano</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Confirmação de presença</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Local da cerimônia/festa</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Suporte</li>
@@ -182,8 +200,8 @@
  					<div class="sm-4-12 animate delay to-top">
  						<div class="plan-item a-center">
  							<h3 class="font-poppins">Avançado</h3>
- 							<p class="value "><span>R$</span>599,<span>00</span></p>
- 							<ul>
+ 							<p class="value "><span>R$</span>39,<span>00</span></p>
+ 							<ul class="mg-bottom">
  								<li><i class="fa fa-check" aria-hidden="true"></i> Blog</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Responsivo</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Galeria de fotos</li>
@@ -196,12 +214,19 @@
  								<li><i class="fa fa-check" aria-hidden="true"></i> Local da cerimônia/festa</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Contribuir para lua de mel</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Online para sempre</li>
+ 								<li><i class="fa fa-check" aria-hidden="true"></i> Online por 1 ano</li>
  								<li><i class="fa fa-check" aria-hidden="true"></i> Suporte</li>
  							</ul>
  							<a href="#" class="btn btn-theme btn-block">Comprar</a>
  						</div>
  					</div>
  				</div>
+ 			</div>
+ 		</section>
+ 		<section class="space-default ">
+ 			<div class="container">
+ 				<h2 class="title-descr a-center animate delay to-top font-poppins">Depoimentos</h2>
+
  			</div>
  		</section>
 

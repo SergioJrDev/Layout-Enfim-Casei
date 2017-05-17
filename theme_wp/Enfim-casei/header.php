@@ -7,7 +7,7 @@
 	<body <?php body_class(); ?>>
 		<header class="default gradient">
  			<div class="container">
- 				<h1 class="logo font-poppins">Enfim, casei!</h1>
+ 				<h1 class="logo font-poppins"><a href="<?php echo home_url(); ?>">Casei bem</a></h1>
  				<div class="nav">
  					<button class="hamburger hamburger--collapse" type="button">
  					  <span class="hamburger-box">
@@ -24,6 +24,16 @@
 						);
 						wp_nav_menu($let);
 						?>
+					<nav class="nav-content">
+						<ul class="nav-list">
+							<?php if(!is_user_logged_in()) { ?>
+								<li><a href="<?php echo home_url('login'); ?>">Entrar</a></li>
+							<?php } else { ?>
+								<li><a href="<?php echo home_url('/meus-dados'); ?>">Meus dados</a></li>
+								<li><a href="<?php echo wp_logout_url(home_url()); ?>">Sair</a></li>
+							<?php } ?>
+						</ul>
+					</nav>
  				</div>
  			</div>
  		</header>
