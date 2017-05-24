@@ -9,34 +9,22 @@
 			<li><a style="color: #333;" href="<?php the_permalink(); ?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Crie seu site</a></li>
 		</ul>
 		<h2 class=" title-descr tab-bottom font-poppins">Crie o modelo do seu site</h2>
-		<form class="form" method="post">	
-			<div class="step mg-bottom">
-				<p>Vamos lá. Primeiro escolha seu plano.</p>
-			</div>
-			<div class="step mg-bottom">
-				<p>Ótimo. Agora confirme o nome da noiva e do noivo.</p>
-				<div class="column">
-					<div class="sm-12-12">
-						<div class="input-group">
-							<label class="label">Digite o nome da noiva</label>
-							<input type="text" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="noiva">
-						</div>
-						<div class="input-group">
-							<label class="label">Digite o nome do noivo</label>
-							<input type="text" ng-model="names.noivo" ng-change="changeName(names)" class="input" name="noivo">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="step mg-bottom">
-				<p>Você gostaria de ter um domínio personalizado, por exemplo, www.nataliaesergio.com.br?</p>
-				<p>Ele custará R$40 por ano, mediante a disponibilidade no www.registro.br</p>
-				<p>Caso contrário, o endereço do seu site será www.enfimcasei.com.br/nataliaesergio, sem nenhuma taxa.</p>
-			</div>
-			<div class="step mg-bottom">
-				<p>Agora escolha o modelo do seu site. As imagens e textos você poderá trocar depois quando seu site estiver pronto.</p>
+		<form class="form" method="post">
 
-				<div class="owl-carousel components mg-bottom">
+			<!-- <div class="mg-bottom  form">
+				<p>Você gostaria de ter um domínio personalizado, por exemplo, www.nataliaesergio.com.br?</p>
+				<p>Ele custará R$40 por ano, mediante a disponibilidade no <a href="https://registro.br/" target="_blank">https://registro.br/</a></p>
+				<p>Caso contrário, o endereço do seu site será www.enfimcasei.com.br/nataliaesergio, sem nenhuma taxa.</p>
+				<div class="input-group">
+					<label class="label" for="domain">Sim, gostaria de um domínio personalizado.</label>
+					<input type="checkbox" class="checkbox" id="domain" name="domain">
+				</div>
+			</div> -->
+
+			<div class="mg-bottom ">
+				<p>Escolha o modelo do seu site. As imagens e textos você poderá trocar depois quando ele estiver pronto.</p>
+
+				<div class="owl-carousel slidersingle components mg-bottom">
 					<section class="main auto-h apresentation overlay no-bg-mobile">
 						<input type="radio" class="hidden" name="header" value="1">
 						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header1.png">
@@ -179,7 +167,7 @@
 					</section>
 				</div>
 				<h2 class="component-title">Os noivos</h2>
-				<div class="owl-carousel components couple">	
+				<div class="owl-carousel slidersingle components couple">	
 					<div class="space-default">
 						<input type="radio" class="hidden" name="casal" value="1">
 						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos1.jpg">
@@ -275,10 +263,10 @@
 
 				<h2 class="component-title">Locais</h2>
 				<div class="space-bottom">
-					<div class="owl-carousel components">
+					<div class="owl-carousel slidersingle components">
 						<section class="space-default local with-img no-bg-mobile">
 							<input type="radio" class="hidden" name="local" value="4">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local1.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local1.jpg">
 							<div class="container max-width-content hidden-mobile">
 								<div class="column">
 						<!-- 			<div class="sm-4-12">
@@ -326,7 +314,7 @@
 						</section>
 						<section class="space-default local with-title">
 							<input type="radio" class="hidden" name="local" value="3">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local2.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local2.jpg">
 							<div class="container hidden-mobile max-widt-content">
 								<!-- <h2 class="font-dacing a-center mg-bottom">O Casamento</h2> -->
 								<div class="column">
@@ -351,7 +339,7 @@
 						</section>
 						<section class="space-defult local">
 							<input type="radio" class="hidden" name="local" value="1">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local3.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local3.jpg">
 							<div class="containe hidden-mobile max-width-content ">
 								<!-- <h2 class="a-center section-title">Eventos</h2> -->
 								<div class="column">
@@ -459,7 +447,7 @@
 
 						<section class="space-default local title-middle overlay no-bg-mobile">
 							<input type="radio" class="hidden" name="local" value="2">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local4.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/local4.jpg">
 							<div class="container hidden-mobile">
 								<div class="column">
 									<div class="sm-4-12">
@@ -501,10 +489,10 @@
 
 				<h2 class="component-title">Confirmação de presença</h2>
 				<div class="space-bottom">
-					<div class="owl-carousel components ">
+					<div class="owl-carousel slidersingle components ">
 						<div class="rsvp rsvp-default space-default no-bg-mobile">
 							<input type="radio" class="hidden" name="rsvp" value="1">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp1.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp1.jpg">
 							<div class="container hidden-mobile">
 								<h2 class="a-center">RSVP</h2>
 								<div class="form max-width">
@@ -531,7 +519,7 @@
 						</div>
 						<div class="rsvp space-default rsvp-pink">
 							<input type="radio" class="hidden" name="rsvp" value="2">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp2.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp2.jpg">
 							<div class="container hidden-mobile">
 								<h2 class="a-center">RSVP</h2>
 								<p class="a-center">Sua presença é muito importante para nós!</p>
@@ -557,7 +545,7 @@
 						</div>
 						<div class="rsvp space-default rsvp-font no-bg-mobile">
 							<input type="radio" class="hidden" name="rsvp" value="3">
-							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp3.JPG">
+							<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp3.jpg">
 							<div class="container hidden-mobile">
 								<h2 class="a-center font-dancing">Confirmação de presença</h2>
 								<div class="form max-width">
@@ -592,10 +580,10 @@
 				</div>
 
 				<h2 class="component-title">Contagem regressiva</h2>
-				<div class="owl-carousel components space-bottom">	
+				<div class="owl-carousel slidersingle components space-bottom">	
 					<section class="space-default timer overlay no-bg-mobile">
 						<input type="radio" class="hidden" name="contagem" value="1">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem1.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem1.jpg">
 						<div class="cntainer max_width hidden-mobile">
 							<h2 class="a-center section-title font-montserrrat">Contagem regressiva para o grande dia...</h2>
 							<div class="column">
@@ -637,7 +625,7 @@
 
 					<section class="space-default timer overlay simple no-bg-mobile">
 						<input type="radio" class="hidden" name="contagem" value="2">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem2.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem2.jpg">
 						<div class="cntainer max_width hidden-mobile">
 							<h2 class="a-center sans-serif section-title">Escolhemos o dia e estamos contando os segundos...</h2>
 							<div class="column">
@@ -679,7 +667,7 @@
 
 					<section class="space-default timer simple triangle no-bg-mobile">
 						<input type="radio" class="hidden" name="contagem" value="3">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem3.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem3.jpg">
 						<div class="cntainer max_width hidden-mobile">
 							<h2 class="a-center sans-serif section-title no-mg">25 de Outubro de 2018, São Paulo/SP</h2>
 							<i class="fa a-center icon pulse fa-heart" aria-hidden="true"></i>
@@ -722,7 +710,7 @@
 
 					<section class="space-default timer simple triangle overlay circle no-bg-mobile">
 						<input type="radio" class="hidden" name="contagem" value="4">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem4.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem4.jpg">
 						<div class="cntainer max_width hidden-mobile">
 							<h2 class="a-center sans-serif section-title">Venha celebrar nosso amor com a gente em...</h2>
 							<div class="column">
@@ -764,7 +752,7 @@
 
 					<section class="timer one-color no-bg">
 						<input type="radio" class="hidden" name="contagem" value="5">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem5.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem5.jpg">
 						<div class="containr hidden-mobile">
 							<div class="column">
 								<div class="md-4-12 first-color"><h2 class="section-title">Faça a contagem regressiva conosco</h2></div>
@@ -804,10 +792,10 @@
 
 				<!-- <h3 class="components-title">Galeria de Foto</h3> -->
 				<h2 class=" component-title">Galeria de Fotos</h2>
-				<div class="owl-carousel components mg-bottom">
+				<div class="owl-carousel slidersingle components mg-bottom">
 					<div>
 						<input type="radio" class="hidden" name="fotos" value="1">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos1.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos1.jpg">
 						<div class="components-item gallery hidden-mobile column less-centered">
 							<div class="sm-6-12 md-4-12">
 								<div class="gallery-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gallery/party.jpg')">
@@ -843,7 +831,7 @@
 					</div>
 					<div>
 						<input type="radio" class="hidden" name="fotos" value="2">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos2.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos2.jpg">
 						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="components-item gallery hidden-mobile gallery-tall less-centered">
 							<div class="sm-25">
@@ -871,7 +859,7 @@
 
 					<div>
 						<input type="radio" class="hidden" name="fotos" value="3">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos3.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos3.jpg">
 						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="gallery hidden-mobile gallery-featured">
 							<div class="gallery-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gallery/party.jpg')">
@@ -899,7 +887,7 @@
 
 					<div>
 						<input type="radio" class="hidden" name="fotos" value="4">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos4.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos4.jpg">
 						<!-- <h2 class=" component-title">Galeria de Fotos</h2> -->
 						<div class="gallery hidden-mobile gallery-five less-centered">				
 							<div class="gallery-item" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gallery/party_1.jpg')">
@@ -922,24 +910,40 @@
 				
 				</div>
 				<h2 class="component-title">Página de Recados</h2>
-				<div class="owl-carousel components mg-bottom">
+				<div class="owl-carousel slidersingle components mg-bottom">
 					<section class="space-defaul notes">
 						<input type="radio" class="hidden" name="recados" value="1">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados1.JPG">
-						<div class="container hidden-mobile max-width-content ">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados1.jpg">
+						<div class="container hidden-mobile ">
 							<div class="notes-group ">
-								<div class="sm-6-12">
-									<div class="notes-item">
-										<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
-										<p class="notes-author">Sérgio Junior, </p>
-										<p class="notes-connect">-Cunhado</p>
+								<div class="column">
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+											<p class="notes-author">Sérgio Junior, </p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
 									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="notes-item">
-										<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
+											<p class="notes-author">Sérgio Junior</p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
+									</div>
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+											<p class="notes-author">Sérgio Junior, </p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
+									</div>
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
+											<p class="notes-author">Sérgio Junior</p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -948,7 +952,7 @@
 
 					<section class="space-default notes overlay box no-bg-mobile">
 						<input type="radio" class="hidden" name="recados" value="2">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados2.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados2.jpg">
 						<div class="container hidden-mobile">
 							<div class="notes-group column">
 								<div class="sm-6-12">
@@ -985,7 +989,7 @@
 
 					<section class="notes bordered-bottom">
 						<input type="radio" class="hidden" name="recados" value="3">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados3.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados3.jpg">
 						<div class="container hidden-mobile">
 							<div class="notes-group column ">
 								<div class="sm-6-12">
@@ -1019,10 +1023,10 @@
 				</div>
 
 				<h2 class="component-title">Blog do casal</h2>
-				<div class="owl-carousel components">
+				<div class="owl-carousel slidersingle components">
 					<div class="containr space-default">
 						<input type="radio" class="hidden" name="blog" value="1">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog1.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog1.jpg">
 						<div class="blog blog-default column hidden-mobile">
 							<div class="sm-4-12">
 								<div class="blog_item">
@@ -1079,7 +1083,7 @@
 					</div>
 					<div class="containr space-default">
 						<input type="radio" class="hidden" name="blog" value="2">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog2.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog2.jpg">
 						<!-- <h2 class=" component-title">Blog do casal</h2> -->
 						<div class="blog bg-overlay hidden-mobile column">
 							<div class="sm-4-12">
@@ -1175,7 +1179,7 @@
 					</div>
 					<div class="containe space-default">
 						<input type="radio" class="hidden" name="blog" value="3">
-						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog3.JPG">
+						<img class="img-mobile" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog3.jpg">
 						<div class="card column hidden-mobile">
 							<div class="sm-4-12 md-6-12">
 								<div class="card_item">
@@ -1289,7 +1293,26 @@
 					</div>
 				</div>
 				<input type="hidden" value="1" name="createPage">
-				<button type="submit" class="btn btn-theme btn-big btn-uppercase">Criar site</button>
+			</div>
+			<div class="mg-bottom ">
+				<p class="mg-bottom">Agora confirme o nome da noiva e do noivo.</p>
+				<div class="max-width-content form bordered">
+					<div class="column">
+						<div class="sm-12-12">
+							<div class="input-group">
+								<label class="label">Digite o nome da noiva</label>
+								<input type="text" ng-model="names.noiva" ng-change="changeName(names)" class="input" name="noiva">
+							</div>
+							<div class="input-group">
+								<label class="label">Digite o nome do noivo</label>
+								<input type="text" ng-model="names.noivo" ng-change="changeName(names)" class="input" name="noivo">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="a-center">
+				<button type="submit" class="btn btn-theme btn-big btn-uppercase submit">Visualizar modelo</button>
 			</div>
 		</form>
 	</div>

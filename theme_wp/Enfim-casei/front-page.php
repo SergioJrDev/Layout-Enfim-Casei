@@ -8,7 +8,7 @@
  					</div>
  					<?php if(!is_user_logged_in()) {?>
 	 					<div class="sm-6-12 flex-row-end">
-	 						<form class="form form-login animate delay to-top" method="post">
+	 						<form class="form form-login animate delay to-top" method="post" id="form-login">
 	 							<p class="title">Entre com seu usuário e senha</p>
 	 							<div class="input-group">
 	 								<label for="" class="label">E-mail</label>
@@ -20,6 +20,7 @@
 	 							</div>
 	 							<div class="input-group">
 	 								<input type="hidden" name="make-login" value="1">
+	 								<input type="hidden" name="in-front" value="1">
 	 								<button type="submit" class="btn btn-theme gradient btn-block">Entrar</button>
 	 							</div>
 	 							<p>ou</p>
@@ -42,9 +43,11 @@
  						<p class="animate delay to-top ">Você escolhe o que gostaria de ter no seu site, e monta ele com mais de 50 partes para combina. Sem modelos prontos, iguais e sem graça.</p>
  					</div>
  					<div class="sm-6-12">
-						<div class="slider">
-							<div class="animate delay to-top slider-item">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/slider/slider-1.png" alt="">
+						<div class="slide" >
+							<div class="slider-ite owl-carousel" id="sliderhome">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/mobile/header1.png" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/mobile/header2.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/mobile/header3.jpg" alt="">
 							</div>
 						</div>
  					</div>
@@ -223,12 +226,12 @@
  				</div>
  			</div>
  		</section>
- 		<section class="space-default ">
+<!--  		<section class="space-default ">
  			<div class="container">
  				<h2 class="title-descr a-center animate delay to-top font-poppins">Depoimentos</h2>
 
  			</div>
- 		</section>
+ 		</section> -->
 
 		<?php
 			// $args = array(

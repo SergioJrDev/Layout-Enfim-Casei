@@ -2,7 +2,7 @@
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php
 			$noivo = get_post_meta(get_the_ID(), 'nome_do_noivo')[0];
-			$noiva = get_post_meta(get_the_ID(), 'nome_do_noiva')[0];
+			$noiva = get_post_meta(get_the_ID(), 'nome_da_noiva')[0];
 
 			if(get_field('header') || get_post_meta(get_the_ID(), 'header')[0]) {
 				$header = get_post_meta(get_the_ID(), 'header')[0];
@@ -249,7 +249,7 @@
 				$local = get_post_meta(get_the_ID(), 'local')[0];
 				if($local == 1) { ?>
 					<section class="space-defult local mg-bottom">
-						<div class="containe max-width-content">
+						<div class="container max-width-content">
 							<!-- <h2 class="a-center section-title">Eventos</h2> -->
 							<div class="column">
 								<div class="sm-6-12">
@@ -420,7 +420,7 @@
 					</section>
 				<?php } ?>
 				<?php if($local == 4) { ?>
-					<section class="space-default local with-img">
+					<section class="space-default local with-img mg-bottom">
 						<input type="radio" class="hidden" name="local" value="4">
 						<div class="container max-width-content">
 							<div class="column">
@@ -475,7 +475,7 @@
 			if(get_field('rsvp') || get_post_meta(get_the_ID(), 'rsvp')) {
 				$rsvp = get_post_meta(get_the_ID(), 'rsvp')[0];
 				if($rsvp == 1) { ?>
-					<div class="rsvp rsvp-default space-default">
+					<div class="rsvp rsvp-default space-default mg-bottom">
 						<div class="container">
 							<h2 class="a-center">RSVP</h2>
 							<div class="form max-width">
@@ -886,23 +886,39 @@
 			if(get_field('recados') || get_post_meta(get_the_ID(), 'recados')) {
 				$recados = get_post_meta(get_the_ID(), 'recados')[0];
 				if($recados == 1) { ?>
-					<section class="space-default notes">
-						<div class="container max-width-content">
+					<section class="space-defaul notes">
+						<div class="container">
 							<h2 class="component-title">Página de Recados</h2>
 							<div class="notes-group ">
-								<div class="sm-6-12">
-									<div class="notes-item">
-										<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
-										<p class="notes-author">Sérgio Junior, </p>
-										<p class="notes-connect">-Cunhado</p>
+								<div class="column">
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+											<p class="notes-author">Sérgio Junior, </p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
 									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="notes-item">
-										<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
+											<p class="notes-author">Sérgio Junior</p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
 									</div>
+																		<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+											<p class="notes-author">Sérgio Junior, </p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
+									</div>
+									<div class="sm-6-12">
+										<div class="notes-item">
+											<p class="notes-p first-letter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut et inventore similique fugit, commodi excepturi aliquam explicabo, maiores nam cum sequi autem beatae officia! Aspernatur inventore aliquam eos hic, fuga.</p>
+											<p class="notes-author">Sérgio Junior</p>
+											<p class="notes-connect">-Cunhado</p>
+										</div>
+									</div
 								</div>
 							</div>
 						</div>
@@ -946,58 +962,35 @@
 					</section>
 				<?php } ?>
 				<?php if($recados == 3) { ?>
-					<section class="space-default notes box with-pic">
+					<section class="notes bordered-bottom">
 						<div class="container">
-							<h2 class="a-center component-title">Página de Recados</h2>
-							<div class="notes-group column">
+							<h2 class="a-center mg-bottom">Página de Recados</h2>
+							<div class="notes-group column ">
 								<div class="sm-6-12">
 									<div class="notes-item">
-										<div class="notes-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/smile-3.jpg')">
-											<img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/notes-.jpg" alt="">
-										</div>
-										<div class="notes-content">
-										<p class="notes-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quo nam hic odio ratione, voluptas vero velit. Beatae fuga quam numquam sed iure sequi debitis, quibusdam labore qui voluptatem laboriosam.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
-										</div>
+										<p class="notes-p ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+										<p class="notes-author">Sérgio Junior, <span>Cunhado</span></p>
 									</div>
 								</div>
 								<div class="sm-6-12">
 									<div class="notes-item">
-										<div class="notes-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/smile.jpg')">
-											<!-- <img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/notes-.jpg" alt=""> -->
-										</div>
-										<div class="notes-content">
-										<p class="notes-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quo nam hic odio ratione, voluptas vero velit. Beatae fuga quam numquam sed iure sequi debitis, quibusdam labore qui voluptatem laboriosam.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
-										</div>
+										<p class="notes-p ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+										<p class="notes-author">Sérgio Junior, <span>Cunhado</span></p>
 									</div>
 								</div>
 								<div class="sm-6-12">
 									<div class="notes-item">
-										<div class="notes-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/smile-1.jpg')">
-											<img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/notes-.jpg" alt="">
-										</div>
-										<div class="notes-content">
-										<p class="notes-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quo nam hic odio ratione, voluptas vero velit. Beatae fuga quam numquam sed iure sequi debitis, quibusdam labore qui voluptatem laboriosam.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
-										</div>
+										<p class="notes-p ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+										<p class="notes-author">Sérgio Junior, <span>Cunhado</span></p>
 									</div>
 								</div>
 								<div class="sm-6-12">
 									<div class="notes-item">
-										<div class="notes-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/couple/groom.jpg')">
-											<img class="hidden" src="<?php echo get_template_directory_uri(); ?>/img/notes-.jpg" alt="">
-										</div>
-										<div class="notes-content">
-										<p class="notes-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quo nam hic odio ratione, voluptas vero velit. Beatae fuga quam numquam sed iure sequi debitis, quibusdam labore qui voluptatem laboriosam.</p>
-										<p class="notes-author">Sérgio Junior</p>
-										<p class="notes-connect">-Cunhado</p>
-										</div>
+										<p class="notes-p ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ipsum a quia ducimus adipisci perferendis eius dignissimos harum amet voluptas cupiditate aliquid, iusto accusantium illo eligendi ad? Odio, libero, veniam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nobis fugit, quae facilis tempore ullam!</p>
+										<p class="notes-author">Sérgio Junior, <span>Cunhado</span></p>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</section>
@@ -1301,52 +1294,60 @@
 			<?php if(is_user_logged_in()) { ?>
 				<div class="column">
 					<div class="xs-6-12">
-						<p>Gostaria de criar outro modelo? <br/> Esse estará salvo em <a href="<?php echo home_url('/meus-dados') ?>">meus dados</a>.</p>
-						<a href="<?php echo home_url('crie-seu-site') ?>" class="btn btn-theme btn-small btn-radius">Criar outro modelo</a>
+						<p>Quer seu site como esse modelo?</p>
+						<form method="post">
+							<input type="hidden" name="create_site" value="<?php echo get_the_ID(); ?>">
+							<button type="submit" class="btn btn-theme btn-radius btn-uppercase">Sim, quero esse modelo</button>
+						</form>
+						
 					</div>
 					<div class="xs-6-12">
-						<p>Quer seu site como esse modelo?</p>
-						<a href="#" class="btn btn-theme btn-radius">Escolher modelo</a>
+						<p>Gostaria de criar outro modelo? Esse estará salvo em <a href="<?php echo home_url('/meus-dados') ?>">meus dados</a>.</p>
+						<a href="<?php echo home_url('crie-seu-site') ?>" class="btn btn-theme btn-small btn-radius">Criar um novo</a>
 					</div>
+
 				</div>
 			<?php }  else { ?>
 				<div class="column">
 					<div class="xs-12-12">
 						<p>Gostaria de salvar esse modelo?</p>
-						<a href="#" class="btn btn-theme btn-small btn-radius">Crie sua conta</a>
+						<a href="#" class="btn btn-theme btn-small btn-radius btn-acount">Crie sua conta</a>
 					</div>
 				</div>
-				<div class="modal active">
-				<form class="form" method="post">
-					<h2 class="title-descr tab-bottom font-poppins active a-left">Faça seu cadastro</h2>
-					<div class="column">
-						<div class="sm-6-12">
-							<div class="input-group">
-								<label for="user_name">Seu nome e sobrenome *</label>
-								<input type="text" class="input inline" id="user_name" name="user_name">
+				<div class="modal">	
+					<form class="form" id="create-login">
+						<h2 class="title-descr tab-bottom font-poppins a-left">Criar conta</h2>
+						<div class="column">
+							<div class="sm-6-12">
+								<div class="input-group">
+									<label class="label"  for="user_name">Seu nome e sobrenome*</label>
+									<input type="text" class="input inline" id="user_name" name="user_name">
+								</div>
+							</div>
+							<div class="sm-6-12">
+								<div class="input-group">
+									<label class="label"  for="user_email">E-mail*</label>
+									<input type="email" class="input inline" id="user_email" name="user_email">
+								</div>
+							</div>
+							<div class="sm-6-12">
+								<div class="input-group">
+									<label class="label"  for="user_pass">Sua senha*</label>
+									<input type="password" class="input inline" id="user_pass" name="user_pass">
+								</div>
+							</div>
+							<div class="sm-6-12">
+								<div class="input-group">
+									<label class="label"  for="user_repass">Digite novamente sua senha*</label>
+									<input type="password" class="input inline" id="user_repass" name="user_repass">
+								</div>
 							</div>
 						</div>
-						<div class="sm-6-12">
-							<div class="input-group">
-								<label for="user_email">E-mail *</label>
-								<input type="email" class="input inline" id="user_email" name="user_email">
-							</div>
-						</div>
-						<div class="sm-6-12">
-							<div class="input-group">
-								<label for="user_pass">Sua senha *</label>
-								<input type="password" class="input inline" id="user_pass" name="user_pass">
-							</div>
-						</div>
-						<div class="sm-6-12">
-							<div class="input-group">
-								<label for="user_repass">Digite novamente sua senha *</label>
-								<input type="password" class="input inline" id="user_repass" name="user_repass">
-							</div>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-theme btn-uppercase">Criar conta</button>
-				</form>
+
+						<input type="hidden" name="createAccount" value="1">
+						<input type="hidden" name="post_created" value="<?php echo get_the_ID(); ?>">
+						<button type="submit" class="btn btn-theme btn-uppercase">Criar conta</button>
+					</form>
 				</div>
 			<?php } ?>
 		</div>

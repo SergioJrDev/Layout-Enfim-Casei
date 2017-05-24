@@ -1,16 +1,14 @@
 .modal {
     position: fixed;
     top: 0;
+    padding: 15px;
     z-index: 999;
     background: rgba(0,0,0,0.63);
     width: 100%;
     left: 0;
-    right: 0;
+    right: 0; 
     overflow: scroll;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-align: center;
     -moz-box-align: center;
     -ms-flex-align: center;
@@ -21,5 +19,8 @@
         margin: auto;
         padding: 20px;
         background: #fff;
+    }
+    &.active {
+        display: flex;
     }
 }

@@ -6,7 +6,7 @@ const
     
     src = {
         stylus: 'css/**/*.styl',
-        components: 'plugins/Components/*.styl',
+        components: 'plugins/components/*.styl',
         css_input: './css/style.styl',
         css_output: 'dist/css',
         js_input: './js/*.js',

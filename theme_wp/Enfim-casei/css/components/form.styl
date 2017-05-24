@@ -11,10 +11,9 @@
 		}
 		.label {
 			display: inline-block;
-		    font-size: 14px;
+		    font-size: 16px;
 		    color: #636363;
 		    margin-bottom: 5px;
-		    font-weight: lighter;
 		    vertical-align: top;
 		}
 		.input {
@@ -62,30 +61,37 @@
 		.hidden {
 			display: none
 		}
-		.radio {
-		    width: 22px;
-		    height: 22px;
-		    background: #fff;
-		    display: inline-block;
-		    border-radius: 50%;
-		    border: 2px solid #656565;
-		    position: relative
-		}
-		.is-radio {
-			&:after {
-			    content: '';
-			    width: 14px;
-			    height: 14px;
-			    background: #656565;
-			    position: absolute;
-			    top: 2px;
-			    left: 2px;
-			    border-radius: 50%;
-			}
+		label.error {
+		    background: #ff7979;
+		    display: block;
+		    text-align: center;
+		    padding: 5px 0;
+		    color: #fff;
 		}
 	}
 	&.bordered {
 	    padding: 20px;
 	    border: 1px solid #e7e7e7;
+	}
+	.radio {
+	    width: 22px;
+	    height: 22px;
+	    background: #fff;
+	    display: inline-block;
+	    border-radius: 50%;
+	    border: 2px solid #656565;
+	    position: relative
+	}
+	.is-radio {
+		&:after {
+		    content: '';
+		    width: 14px;
+		    height: 14px;
+		    background: #656565;
+		    position: absolute;
+		    top: 2px;
+		    left: 2px;
+		    border-radius: 50%;
+		}
 	}
 } 

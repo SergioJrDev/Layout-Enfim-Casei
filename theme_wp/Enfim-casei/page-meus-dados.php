@@ -8,6 +8,9 @@
 				<li><a style="color: #333;" href="<?php the_permalink(); ?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Meus Dados</a></li>
 			</ul>
  				<h2 class=" title-descr tab-bottom font-poppins">Painel de controle</h2>
+ 				<?php if(isset($_GET['create'])) { ?>
+ 					<p class="alert alert-success a-center mg-boottom">Seu site está sendo criado com muito carinho. Em breve você receberá todos os dados de acesso.</p>
+ 				<?php } ?>
 				<div class="column">
 				<!-- 	<div class="sm-3-12">
 			 			<nav class="dashboard-menu">
@@ -51,137 +54,116 @@
 										<a href="<?php echo home_url('/crie-seu-site') ?>" class="btn btn-theme btn-small btn-radius">Criar modelo</a>
 									</div>
 								</div>
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Endereço</span>
-										<p><a href="#">www.nataliaesergio.com.br</a></p>
+								<?php $url = get_field('url', 'user_'.get_current_user_id());
+								if($url) { ?>
+									<div class="sm-6-12">
+										<div class="view-info">
+											<span class="title">Endereço</span>
+											<p><a target="_blank" href="<?php echo $url ?>"> <?php echo $url; ?></a></p>
+										</div>
 									</div>
-								</div>
+								<?php }	?>
 
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Acesso ao painel do site</span>
-										<p><a href="#">www.nataliaesergio.com.br/wp-admin</a></p>
+								<?php $admin = get_field('admin', 'user_'.get_current_user_id());
+								if($admin) { ?>
+									<div class="sm-6-12">
+										<div class="view-info">
+											<span class="title">Acesso ao painel do site</span>
+											<p><a target="_blank" href="<?php echo $admin ?>"> <?php echo $admin; ?></a></p>
+										</div>
 									</div>
-								</div>
+								<?php }	?>
+
+								<?php $admin_user = get_field('admin_user', 'user_'.get_current_user_id());
+								if($admin_user) { ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Login</span>
-										<p>Sergioenatalia</p>
+										<p><?php echo $admin_user; ?></p>
 									</div>
 								</div>
+								<?php }	?>
+
+								<?php $admin_pass = get_field('admin_pass', 'user_'.get_current_user_id());
+								if($admin_pass) { ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Senha</span>
-										<p>@S3rginho123</p>
+										<p><?php echo $admin_pass; ?></p>
 									</div>
 								</div>
+								<?php }	?>
+
+								<?php $plano = get_field('plano', 'user_'.get_current_user_id());
+								if($plano) { ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Plano</span>
-										<p>Avançado <a href="#" class="btn btn-gray float-right"><i class="fa fa-pencil" aria-hidden="true"></i></a></p>
+										<p><?php echo $plano ?> <a href="#" class="btn btn-gray float-right"><i class="fa fa-pencil" aria-hidden="true"></i></a></p>
 										<div class="clear-fix"></div>
 									</div>
 								</div>
+								<?php }	?>
+
+								<?php $modelo = get_field('modelo', 'user_'.get_current_user_id());
+								if($modelo) { ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Modelo</span>
-										<p><a href="#">www.enfimcasei.com.br/natalia-e-sergio</a></p>
+										<p><a href="<?php echo $modelo ?>"> <?php echo $modelo; ?></a></p>
 									</div>
 								</div>
+								<?php }	?>
 							</div>
 						</div>	
 			 			<div data-show='1' class="dashboard-view active">
 							<h2 class="font-poppins">Meus dados pessoais</h2>
 							<div class="column">
+								<?php $noiva = get_field('noiva', 'user_'.get_current_user_id()); ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Nome da noiva</span>
-										<p>Natália Fazzolari</p>
+										<p><?php echo $noiva ? $noiva : '-'; ?></p>
 									</div>
 								</div>
 
+								<?php $noivo = get_field('noivo', 'user_'.get_current_user_id()); ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Nome do noivo</span>
-										<p>Sérgio Junior</p>
+										<p><?php echo $noivo ? $noivo : '-'; ?></p>
 									</div>
 								</div>
+								
+								<?php $data_casamento = get_field('data_casamento', 'user_'.get_current_user_id()); ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Data do casamento</span>
-										<p>10/04/2019</p>
+										<p><?php echo $data_casamento ? $data_casamento : '-'; ?></p>
 									</div>
 								</div>
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Local do casamento</span>
-										<p>Clube dos Esportes</p>
-									</div>
-								</div>
+
+								<?php $email = get_userdata(get_current_user_id())->user_email; ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">E-mail</span>
-										<p>sergioamjr91@gmail.com</p>
+										<p><?php echo $email ? $email : '-'; ?></p>
 									</div>
 								</div>
+
+								<?php $phone = get_user_meta( get_current_user_id(), 'billing_phone', true ); ?>
 								<div class="sm-6-12">
 									<div class="view-info">
 										<span class="title">Telefone</span>
-										<p>11 95982-8953</p>
+										<p><?php echo $phone ? $phone : '-'; ?></p>
 									</div>
 								</div>
+								
 							</div>
-							<a href="#" class="btn btn-gray float-right"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							<a href="<?php echo home_url('/meus-dados/atualizar-dados') ?>" class="btn btn-gray float-right"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							<!-- <a href="#" class="btn btn-danger float-right"><i class="fa fa-trash-o" aria-hidden="true"></i> Excluir minha conta</a> -->
 							<div class="clearfix"></div>
 						</div>	 
-
-			 			<div data-show='3' class="dashboard-view">
-							<h2 class=" title-descr tab-bottom font-poppins">Planos</h2>
-						<!-- 	<div class="alert a-center alert-danger">
-								<p>Atenção, faltam 5 dias para expirar seu teste.</p>
-							</div> -->
-							<div class="column">
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Endereço</span>
-										<p><a href="#">www.nataliaesergio.com.br</a></p>
-									</div>
-								</div>
-
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Acesso ao painel do site</span>
-										<p><a href="#">www.nataliaesergio.com.br/wp-admin</a></p>
-									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Login</span>
-										<p>Sergioenatalia</p>
-									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Senha</span>
-										<p>@S3rginho123</p>
-									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Plano</span>
-										<p>Avançado</p>
-										<a href="#">Alterar plano</a>
-									</div>
-								</div>
-								<div class="sm-6-12">
-									<div class="view-info">
-										<span class="title">Modelo</span>
-										<p><a href="#">www.enfimcasei.com.br/natalia-e-sergio</a></p>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>			
  			</div>

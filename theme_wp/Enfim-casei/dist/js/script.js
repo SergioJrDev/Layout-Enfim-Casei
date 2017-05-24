@@ -8,23 +8,50 @@ $(document).ready(function(){
 	 	}  
 	});
 	
- 	// setInterval(function() {
- 	// 	let now = new Date(),
- 	// 		wedding = new Date('2018-10-25T12:00:00'),
- 	// 		difference = new Date(wedding - now),
- 	// 		days = difference.getDay(),
- 	// 		hours = difference.getHours(),
- 	// 		month = difference.getMonth(),
- 	// 		year = difference.getFullYear(),
- 	// 		minutes = difference.getMinutes(),
- 	// 		seconds = difference.getSeconds();
+	$(document).on('submit', "form", function(e) {
+		$(this).find('.submit').prop('disabled', true).addClass('disabled');
+	});
 
- 	// 		$('.number-days').text(days + (month * 30));
- 	// 		$('.number-hours').text(hours);
- 	// 		$('.number-minutes').text(minutes);
- 	// 		$('.number-seconds').text(seconds);
+	$('.btn-acount').click(function() {
+		$('.modal').addClass('active');
+	});
 
- 	// }, 1000);
+	$('#create-login').validate({
+	  rules: {
+	    user_name: {
+	    	required: true
+		},
+	    user_email: {
+	      required: true,
+	      email: true
+	    },
+		user_pass: {
+			required: true,
+			minlength: 6
+		},
+		user_repass: {
+			required: true,
+			minlength: 6,
+			equalTo: "#user_pass"
+		},
+	  },
+	  messages: {
+	    user_name: "Digite seu nome.",
+	    user_email: {
+	      required: "Digite seu e-mail.",
+	      email: "Digite um e-mail válido."
+	    },
+	    user_pass: {
+			required: 'Digite sua senha',
+			minlength: 'Digite uma senha com no mínimo 6 caracteres.'
+	    },
+	    user_repass: {
+	    	required: 'Digite sua senha',
+	    	minlength: 'Digite uma senha com no mínimo 6 caracteres.',
+			equalTo: 'Por favor, confirma sua senha.'
+	    }
+	  }
+	});
 
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 6, 2018 20:00:00").getTime();
@@ -51,19 +78,12 @@ var x = setInterval(function() {
 	$('.number-minutes').text(minutes);
 	$('.number-seconds').text(seconds);
 
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
+    // // If the count down is over, write some text 
+    // if (distance < 0) {
+    //     clearInterval(x);
+    //     document.getElementById("demo").innerHTML = "EXPIRED";
+    // }
 }, 1000);
-
- 	$(".owl-carousel").owlCarousel({
-	    autoHeight: true,
-	    items:1,
-	    nav: true,
-	    navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
- 	});
 
  	function setRadio() {
  		setTimeout(function() {
@@ -84,5 +104,23 @@ var x = setInterval(function() {
  		$('.dashboard').find("[data-show='" + $(this).data().menu + "']").addClass('active');
  		// console.log($(this).data().menu);
  		e.preventDefault();
+ 	}); 
+});
+
+$(window).on('load', function() {
+ 	$(".slidersingle").owlCarousel({
+	    autoHeight: true,
+	    items:1,
+	    nav: true,
+	    navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
+ 	});
+
+ 	$("#sliderhome").owlCarousel({
+	    items:1,
+	    loop:true,
+	    nav: false,
+		autoplay:true,
+		autoplayTimeout:3000,
+		autoplayHoverPause:false, 
  	});
 });

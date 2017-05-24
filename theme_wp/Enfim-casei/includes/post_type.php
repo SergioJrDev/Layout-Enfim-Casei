@@ -67,6 +67,12 @@ function custom_post_type() {
 	);
 	register_posttype($options);
 
+	$options = array(
+		'name' => 'Pedidos',
+		'support' => ['title', 'author']
+	);
+	register_posttype($options);
+
 }
 add_action( 'init', 'custom_post_type', 0 );
 
